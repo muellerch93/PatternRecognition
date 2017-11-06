@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Individual>
-  <Fitness>0.8917378917378918</Fitness>
+  <Fitness>0.8945868945868946</Fitness>
   <Genotype>
     <Chromosome>
       <Name>evSOLve.JEvolution.chromosomes.PermChromosome</Name>
-      <Bases>0|4|2|25|22|5|33|7|8|3|11|6|13|10|14|15|16|31|18|19|20|21|24|23|12|26|1|28|9|29|27|17|32|30|</Bases>
+      <Bases>4|21|2|3|0|8|22|9|5|7|17|11|27|13|12|15|16|1|10|6|30|18|29|23|25|20|26|14|28|19|24|31|32|33|</Bases>
       <Length>34</Length>
       <MutationRate>0.1</MutationRate>
       <CrossoverRate>0.6</CrossoverRate>
