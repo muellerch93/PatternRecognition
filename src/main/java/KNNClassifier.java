@@ -7,13 +7,20 @@ import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
-import java.util.TreeMap;
-
-import javax.print.attribute.HashAttributeSet;
 
 
-public class MyKNN 
-{	
+public class KNNClassifier
+{
+
+
+
+
+	public KNNClassifier()
+	{
+
+	}
+
+
 	private static HashMap sortByValues(HashMap map) { 
 	       List list = new LinkedList(map.entrySet());
 	       // Defined Custom Comparator here
@@ -34,30 +41,26 @@ public class MyKNN
 	       return sortedHashMap;
 	  }
 
-	public static boolean leaveOneOutEvaluate(ArrayList<DataInstance> traindata, int testIdx, ArrayList<Integer> permutations, int subselectCount, int K)
+	public static boolean leaveOneOutEvaluate(ArrayList<Pattern> patterns, int testIdx, ArrayList<Integer> permutations, int subselectCount, int K)
 	{
 		
-        HashMap<DataInstance,Double> unsorted = new HashMap<DataInstance,Double>();
-        
-		DataInstance testSample = traindata.get(testIdx);
-		
-		for(int i=0; i<traindata.size(); i++)
-		{
-			if(i != testIdx)
-			{
-				unsorted.put(traindata.get(i), traindata.get(i).distanceTo(testSample, permutations, subselectCount));
+        HashMap<Pattern,Double> unsorted = new HashMap<Pattern,Double>();
+		Pattern testSample = patterns.get(testIdx);
+
+		//for every pattern add distance to test sample
+		for(int i=0; i<patterns.size(); i++) {
+			if(i != testIdx) {
+
+				unsorted.put(patterns.get(i), patterns.get(i).distanceTo(testSample, permutations, subselectCount));
 			}
 		}
 		
 		
-		HashMap<DataInstance, Double> sorted = sortByValues(unsorted);
-		
-		
-		
+		HashMap<Pattern, Double> sorted = sortByValues(unsorted);
 		HashMap<Integer, Integer> votes = new HashMap<Integer,Integer>();
 		
 		
-		for(DataInstance di:sorted.keySet())
+		for(Pattern di:sorted.keySet())
 		{
 			if(votes.get(di.getTarget()) == null)
 			{
@@ -99,10 +102,7 @@ public class MyKNN
 	
 	
 	
-	public MyKNN()
-	{
-		
-	}
+
 	
 	
 

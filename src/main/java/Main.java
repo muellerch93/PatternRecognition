@@ -1,6 +1,7 @@
 
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import evSOLve.JEvolution.Individual;
 import evSOLve.JEvolution.JEvolution;
@@ -44,8 +45,11 @@ public class Main{
         JEvolutionReporter EAReporter = (JEvolutionReporter)EA.getReporter();			//- get the reporter
         PermChromosome chrom = new PermChromosome();				//+ create a chromosome
 
-        // Load data
-        KnnPhenotype knnPheno = new KnnPhenotype(inputFile, (int)3);
+        // Load datafrom file
+        ArrayList<Pattern> patterns=MyFileIO.readPatternsFromFile(inputFile);
+
+        //init phenotype with problem specific patterns
+        MyPhenotype knnPheno = new MyPhenotype(patterns, (int)3);
 
 
         try {
@@ -73,9 +77,10 @@ public class Main{
             System.out.println("Continuing with default values.");
         }
         System.out.println("Starting evolution...");
+
         EA.doEvolve(2);
-//			;
-        //EA.doEvolve();									// + evolution run
+
+
 
         Individual best = EAReporter.getBestIndividual();
         best.toFile("bestResult.xml");
