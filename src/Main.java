@@ -73,7 +73,7 @@ public class Main{
             System.out.println("Continuing with default values.");
         }
         System.out.println("Starting evolution...");
-        EA.doEvolve(10);
+        EA.doEvolve(2);
 //			;
         //EA.doEvolve();									// + evolution run
 
