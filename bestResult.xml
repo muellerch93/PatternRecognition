@@ -4,7 +4,7 @@
   <Genotype>
     <Chromosome>
       <Name>evSOLve.JEvolution.chromosomes.PermChromosome</Name>
-      <Bases>0|4|2|25|22|5|33|7|8|3|11|6|13|10|14|15|16|31|18|19|20|21|24|23|12|26|1|28|9|29|27|17|32|30|</Bases>
+      <Bases>0|2|4|32|14|20|12|6|27|33|3|11|31|13|24|15|29|21|19|10|17|18|22|16|1|25|28|8|26|7|30|23|9|5|</Bases>
       <Length>34</Length>
       <MutationRate>0.1</MutationRate>
       <CrossoverRate>0.6</CrossoverRate>
