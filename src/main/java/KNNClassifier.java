@@ -13,8 +13,6 @@ public class KNNClassifier
 {
 
 
-
-
 	public KNNClassifier()
 	{
 
@@ -70,7 +68,7 @@ public class KNNClassifier
 			{
 				votes.put(di.getTarget(), votes.get(di.getTarget())+1);
 			}
-			
+
 			break;
 		}
 		
