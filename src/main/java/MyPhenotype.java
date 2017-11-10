@@ -3,17 +3,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-
+import evSOLve.JEvolution.chromosomes.IntChromosome;
 import evSOLve.JEvolution.chromosomes.PermChromosome;
 
 
 public class MyPhenotype extends SortPhenotype {
 
 
-    protected int _k = 1;
+    private int _k = 5;
 
 
-    static ArrayList<Pattern> _data;
+    private static ArrayList<Pattern> _data;
     private int _nrFeaturesToUse;
 
     /**
@@ -45,11 +45,10 @@ public class MyPhenotype extends SortPhenotype {
 
 
     public void doOntogeny(List genotype) {
-        PermChromosome chrom = (PermChromosome) genotype.get(0);
+        IntChromosome chrom = (IntChromosome) genotype.get(0);
         ArrayList<Integer> perm = (ArrayList<Integer>) chrom.getBases();
         nCorrect = 0;
         nBases = _data.size();
-
 
         for (int i = 0; i < nBases; i++) {
             if (KNNClassifier.leaveOneOutEvaluate(_data, i, perm, this.getUsedFeatures(), _k)) {

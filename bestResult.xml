@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Individual>
-  <Fitness>0.8917378917378918</Fitness>
+  <Fitness>0.9458689458689459</Fitness>
   <Genotype>
     <Chromosome>
-      <Name>evSOLve.JEvolution.chromosomes.PermChromosome</Name>
-      <Bases>20|7|2|31|4|5|3|29|17|23|11|6|18|22|1|15|14|8|30|19|10|21|13|26|9|25|0|27|16|24|12|28|32|33|</Bases>
+      <Name>evSOLve.JEvolution.chromosomes.IntChromosome</Name>
+      <Bases>6|23|23|5|26|4|2|10|7|26|30|19|23|14|13|11|28|12|25|15|19|8|5|27|3|16|4|7|9|0|17|25|5|14|</Bases>
       <Length>34</Length>
       <MutationRate>0.1</MutationRate>
       <CrossoverRate>0.6</CrossoverRate>
       <SoupType>0</SoupType>
       <Low>0</Low>
-      <High>9</High>
+      <High>33</High>
     </Chromosome>
   </Genotype>
   <PhenotypeName>MyPhenotype</PhenotypeName>
   <Phenotype>
     <Items>351</Items>
-    <Correct>313</Correct>
+    <Correct>332</Correct>
   </Phenotype>
 </Individual>

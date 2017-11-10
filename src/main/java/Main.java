@@ -7,6 +7,7 @@ import evSOLve.JEvolution.Individual;
 import evSOLve.JEvolution.JEvolution;
 import evSOLve.JEvolution.JEvolutionException;
 import evSOLve.JEvolution.JEvolutionReporter;
+import evSOLve.JEvolution.chromosomes.IntChromosome;
 import evSOLve.JEvolution.chromosomes.PermChromosome;
 
 
@@ -19,7 +20,7 @@ public class Main{
         // IONOSPHERE (TWO CLASS PROBLEM, good/bad signal)
         // https://archive.ics.uci.edu/ml/datasets/Ionosphere
         // number of features: 34
-        // String inputFile = "data/ionosphere_mapped.data";
+         String inputFile = "data/ionosphere_mapped.data";
 
         // SEMEION HANDWRITTEN DIGITS (10 CLASS PROBLEM, 0...9)
         // https://archive.ics.uci.edu/ml/datasets/Semeion+Handwritten+Digit
@@ -29,8 +30,6 @@ public class Main{
         // RED WINE QUALITY (6 CLASS PROBLEM, since only scores between 3 and 8 available in the data set)
         // https://archive.ics.uci.edu/ml/datasets/Wine+Quality
         // number of features: 11
-        String inputFile = "data/ionosphere_mapped.data";
-
 
 
         // OPTIONAL WINE DATASET (INITIAL ONE):
@@ -43,17 +42,19 @@ public class Main{
         JEvolution EA = JEvolution.getInstance();																					//+ call it an EA
 // 		EA.setMaximization(false);																											//o minimization problem
         JEvolutionReporter EAReporter = (JEvolutionReporter)EA.getReporter();			//- get the reporter
-        PermChromosome chrom = new PermChromosome();				//+ create a chromosome
+        			                        //+ create a chromosome
 
         // Load datafrom file
         ArrayList<Pattern> patterns=MyFileIO.readPatternsFromFile(inputFile);
 
+
         //init phenotype with problem specific patterns
-        MyPhenotype knnPheno = new MyPhenotype(patterns, (int)3);
+        MyPhenotype phenotype = new MyPhenotype(patterns, 10);
 
-
+        IntChromosome chrom = new IntChromosome(phenotype.getAttributeCount());
+        //PermChromosome chrom = new PermChromosome();
         try {
-            chrom.setLength(knnPheno.getAttributeCount());
+            chrom.setLength(phenotype.getAttributeCount());
             //chrom.setCrossoverPoints(knnPheno.getUsedFeatures());
 
             //- only set to justify try statement..;-)
@@ -63,13 +64,13 @@ public class Main{
 // 			Utilities.setRandomSeed(88);
 
             EA.addChromosome(chrom);																//+ tell EA about your chromosome
-            EA.setPhenotype(knnPheno);											//+ tell EA about your Phenotype class
+            EA.setPhenotype(phenotype);											                    //+ tell EA about your Phenotype class
 //			EA.setSelection(new TournamentSelection(3));
 // 			EA.setPopulationSize(25, 50);
             EA.setFitnessThreshold(1.0);																//o better fitness not possible
-            EA.setMaximalGenerations(5);														//o
+           // EA.setMaximalGenerations(20);														//o
 
-            EAReporter.setReportLevel(JEvolutionReporter.VERBOSE);
+            EAReporter.setReportLevel(JEvolutionReporter.BRIEF);
 // 			EAReporter.useFitnessRepository(true);
 
         } catch (JEvolutionException e) {
@@ -78,7 +79,7 @@ public class Main{
         }
         System.out.println("Starting evolution...");
 
-        EA.doEvolve(2);
+        EA.doEvolve(100);
 
 
 
