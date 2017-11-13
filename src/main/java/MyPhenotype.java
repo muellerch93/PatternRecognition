@@ -10,7 +10,7 @@ import evSOLve.JEvolution.chromosomes.PermChromosome;
 public class MyPhenotype extends SortPhenotype {
 
 
-    private int _k = 5;
+    private int _k = 30;
 
 
     private static ArrayList<Pattern> _data;

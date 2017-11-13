@@ -49,7 +49,7 @@ public class Main{
 
 
         //init phenotype with problem specific patterns
-        MyPhenotype phenotype = new MyPhenotype(patterns, 10);
+        MyPhenotype phenotype = new MyPhenotype(patterns, 3);
 
         IntChromosome chrom = new IntChromosome(phenotype.getAttributeCount());
         //PermChromosome chrom = new PermChromosome();

@@ -8,7 +8,6 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
-
 public class KNNClassifier
 {
 
@@ -18,81 +17,69 @@ public class KNNClassifier
 
 	}
 
+	private static <K, V extends Comparable<? super V>> HashMap<K, V> sortByValue(HashMap<K, V> map) {
 
-	private static HashMap sortByValues(HashMap map) { 
-	       List list = new LinkedList(map.entrySet());
-	       // Defined Custom Comparator here
-	       Collections.sort(list, new Comparator() {
-	            public int compare(Object o1, Object o2) {
-	               return ((Comparable) ((Map.Entry) (o1)).getValue())
-	                  .compareTo(((Map.Entry) (o2)).getValue());
-	            }
-	       });
+		List<HashMap.Entry<K, V>> list = new LinkedList<HashMap.Entry<K, V>>(map.entrySet());
+		Collections.sort( list, new Comparator<Map.Entry<K, V>>() {
+			public int compare(Map.Entry<K, V> o1, Map.Entry<K, V> o2) {
+				return (o1.getValue()).compareTo( o2.getValue() );
+			}
+		});
 
-	       // Here I am copying the sorted list in HashMap
-	       // using LinkedHashMap to preserve the insertion order
-	       HashMap sortedHashMap = new LinkedHashMap();
-	       for (Iterator it = list.iterator(); it.hasNext();) {
-	              Map.Entry entry = (Map.Entry) it.next();
-	              sortedHashMap.put(entry.getKey(), entry.getValue());
-	       } 
-	       return sortedHashMap;
-	  }
+		HashMap<K, V> result = new LinkedHashMap<K, V>();
+		for (Map.Entry<K, V> entry : list) {
+			result.put(entry.getKey(), entry.getValue());
+		}
+		return result;
+	}
+
 
 	public static boolean leaveOneOutEvaluate(ArrayList<Pattern> patterns, int testIdx, ArrayList<Integer> permutations, int subselectCount, int K)
 	{
-		
+
         HashMap<Pattern,Double> unsorted = new HashMap<Pattern,Double>();
-		Pattern testSample = patterns.get(testIdx);
+		Pattern testPattern = patterns.get(testIdx);
 
-		//for every pattern add distance to test sample
-		for(int i=0; i<patterns.size(); i++) {
-			if(i != testIdx) {
+		//add patterns and their distance to the testPattern into a hashmap,
+		for(int i=0; i<patterns.size(); i++)
+			if(i != testIdx)
+				unsorted.put(patterns.get(i), patterns.get(i).distanceTo(testPattern, permutations, subselectCount));
 
-				unsorted.put(patterns.get(i), patterns.get(i).distanceTo(testSample, permutations, subselectCount));
-			}
-		}
-		
-		
-		HashMap<Pattern, Double> sorted = sortByValues(unsorted);
+
+
+		HashMap<Pattern, Double> sorted = sortByValue(unsorted);
 		HashMap<Integer, Integer> votes = new HashMap<Integer,Integer>();
-		
-		
-		for(Pattern di:sorted.keySet())
-		{
-			if(votes.get(di.getTarget()) == null)
-			{
-				votes.put(di.getTarget(), 1);
-			}
-			else
-			{
-				votes.put(di.getTarget(), votes.get(di.getTarget())+1);
-			}
 
-			break;
+
+		int j=0;
+		for(Pattern pattern:sorted.keySet()) {
+			if(votes.get(pattern.getTarget()) == null)
+				votes.put(pattern.getTarget(), 1);
+			else
+				votes.put(pattern.getTarget(), votes.get(pattern.getTarget())+1);
+			j++;
+			if(j==K)
+				break;
 		}
-		
+
+
 		int maxClass = -1;
 		int maxCnt = 0;
 		
-		int k=0; 
-		for(Integer c:votes.keySet())
-		{
-			if(votes.get(c) > maxCnt)
-			{
+		j=0;
+		for(Integer c:votes.keySet()) {
+			if(votes.get(c) > maxCnt) {
 				maxClass = c;
 				maxCnt = votes.get(c);
 			}
-			k++;
-			
-			if(k >= K)
-			{
+			j++;
+			if(j == K)
 				break;
-			}
+
 		}
 		
 		
-		return maxClass == testSample.getTarget();
+		return maxClass == testPattern.getTarget();
 	
 				
 		
