@@ -10,7 +10,7 @@ import evSOLve.JEvolution.chromosomes.PermChromosome;
 public class MyPhenotype extends SortPhenotype {
 
 
-    private int _k = 30;
+    private int _k = 2;
 
 
     private static ArrayList<Pattern> _data;
@@ -26,7 +26,10 @@ public class MyPhenotype extends SortPhenotype {
         _nrFeaturesToUse = (int) Math.floor((double) this.getAttributeCount() * featuresToUsePercentage);
 
     }
+    public MyPhenotype(ArrayList<Pattern> patterns) throws IOException {
+        _data = patterns;
 
+    }
     public MyPhenotype(ArrayList<Pattern> patterns, int nrFeaturesToUse) throws IOException {
         _data = patterns;
         _nrFeaturesToUse = nrFeaturesToUse;
@@ -41,7 +44,7 @@ public class MyPhenotype extends SortPhenotype {
     public int getUsedFeatures() {
         return _nrFeaturesToUse;
     }
-
+    public void setUsedFeatures(int nrFeaturesToUse){_nrFeaturesToUse=nrFeaturesToUse;}
 
 
     public void doOntogeny(List genotype) {

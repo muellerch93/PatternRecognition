@@ -49,10 +49,11 @@ public class Main{
 
 
         //init phenotype with problem specific patterns
-        MyPhenotype phenotype = new MyPhenotype(patterns, 3);
+        MyPhenotype phenotype = new MyPhenotype(patterns);
 
         IntChromosome chrom = new IntChromosome(phenotype.getAttributeCount());
-        //PermChromosome chrom = new PermChromosome();
+        phenotype.setUsedFeatures(phenotype.getAttributeCount());
+
         try {
             chrom.setLength(phenotype.getAttributeCount());
             //chrom.setCrossoverPoints(knnPheno.getUsedFeatures());
