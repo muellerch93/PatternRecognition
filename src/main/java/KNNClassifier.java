@@ -1,12 +1,4 @@
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.LinkedHashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class KNNClassifier
 {
@@ -33,18 +25,31 @@ public class KNNClassifier
 		return result;
 	}
 
-
-	public static boolean leaveOneOutEvaluate(ArrayList<Pattern> patterns, int testIdx, ArrayList<Integer> permutations, int subselectCount, int K)
-	{
+	public static boolean leaveOneOutEvaluate( int testPatternId, ArrayList<Integer> individual,ArrayList<Pattern> patterns, double distanceFeaturePercentage,
+											   int K, boolean allowDuplicates) {
 
         HashMap<Pattern,Double> unsorted = new HashMap<Pattern,Double>();
-		Pattern testPattern = patterns.get(testIdx);
+		Pattern testPattern = patterns.get(testPatternId);
+		ArrayList<Integer> newIndividual = new ArrayList<Integer>();
+
+		if(!allowDuplicates) {
+			//remove duplicates in permutation
+			for (Integer cFeature : individual)
+				if (!newIndividual.contains(cFeature))
+					newIndividual.add(cFeature);
+		}else
+			newIndividual = individual;
+
+		//we got rid of duplicates, now we can determine the number of features we want to use for distance calculation
+		int nrFeaturesToUse = (int) Math.floor((double) newIndividual.size() * distanceFeaturePercentage);
 
 		//add patterns and their distance to the testPattern into a hashmap,
-		for(int i=0; i<patterns.size(); i++)
-			if(i != testIdx)
-				unsorted.put(patterns.get(i), patterns.get(i).distanceTo(testPattern, permutations, subselectCount));
-
+		for(int i=0; i<patterns.size(); i++) {
+			if (i != testPatternId) {
+				//unsorted.put(patterns.get(i), patterns.get(i).distanceTo(testPattern, newIndividual, subselectCount));
+				unsorted.put(patterns.get(i), patterns.get(i).distanceTo(testPattern, newIndividual, nrFeaturesToUse));
+			}
+		}
 
 
 		HashMap<Pattern, Double> sorted = sortByValue(unsorted);

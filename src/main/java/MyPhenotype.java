@@ -10,51 +10,52 @@ import evSOLve.JEvolution.chromosomes.PermChromosome;
 public class MyPhenotype extends SortPhenotype {
 
 
-    private int _k = 2;
+    private int _k = 3;
 
 
-    private static ArrayList<Pattern> _data;
-    private int _nrFeaturesToUse;
+    private ArrayList<Pattern> data;
+    private double distanceFeaturePercentage;
+    private boolean distanceAllowDuplicates;
 
     /**
      * Constructs the basic phenotype.
      *
      * @throws IOException
      */
-    public MyPhenotype(ArrayList<Pattern> patterns, double featuresToUsePercentage) throws IOException {
-        _data = patterns;
-        _nrFeaturesToUse = (int) Math.floor((double) this.getAttributeCount() * featuresToUsePercentage);
 
-    }
-    public MyPhenotype(ArrayList<Pattern> patterns) throws IOException {
-        _data = patterns;
+    /**
+     * public MyPhenotype(ArrayList<Pattern> patterns) throws IOException {
+     * this.data = patterns;
+     * <p>
+     * }
+     **/
 
-    }
-    public MyPhenotype(ArrayList<Pattern> patterns, int nrFeaturesToUse) throws IOException {
-        _data = patterns;
-        _nrFeaturesToUse = nrFeaturesToUse;
-
+    public MyPhenotype(ArrayList<Pattern> patterns, double distanceFeaturePercentage, boolean distanceAllowDuplicates) throws IOException {
+        this.data = patterns;
+        this.distanceFeaturePercentage = distanceFeaturePercentage;
+        this.distanceAllowDuplicates = distanceAllowDuplicates;
     }
 
 
     public int getAttributeCount() {
-        return _data.get(0).getAttributeCount();
+        return data.get(0).getAttributeCount();
     }
 
-    public int getUsedFeatures() {
-        return _nrFeaturesToUse;
+
+    public void setUsedFeaturesPercentage(double distanceFeaturePercentage) {
+        this.distanceFeaturePercentage = distanceFeaturePercentage;
     }
-    public void setUsedFeatures(int nrFeaturesToUse){_nrFeaturesToUse=nrFeaturesToUse;}
 
 
     public void doOntogeny(List genotype) {
         IntChromosome chrom = (IntChromosome) genotype.get(0);
         ArrayList<Integer> perm = (ArrayList<Integer>) chrom.getBases();
+
         nCorrect = 0;
-        nBases = _data.size();
+        nBases = data.size();
 
         for (int i = 0; i < nBases; i++) {
-            if (KNNClassifier.leaveOneOutEvaluate(_data, i, perm, this.getUsedFeatures(), _k)) {
+            if (KNNClassifier.leaveOneOutEvaluate(i, perm, data, distanceFeaturePercentage, _k, distanceAllowDuplicates)) {
                 nCorrect++;
             }
         }
@@ -89,7 +90,6 @@ public class MyPhenotype extends SortPhenotype {
     public String toString() {
         return (nCorrect + " elements out of " + nBases + " correct.");
     }
-
 
 
 //

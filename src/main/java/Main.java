@@ -13,7 +13,7 @@ import evSOLve.JEvolution.chromosomes.PermChromosome;
 
 public class Main{
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws Exception {
 
         // The three data sets to use:
 
@@ -39,22 +39,31 @@ public class Main{
 
 
 
-        JEvolution EA = JEvolution.getInstance();																					//+ call it an EA
+        																				//+ call it an EA
 // 		EA.setMaximization(false);																											//o minimization problem
-        JEvolutionReporter EAReporter = (JEvolutionReporter)EA.getReporter();			//- get the reporter
+       // JEvolutionReporter EAReporter = (JEvolutionReporter)EA.getReporter();			                            //- get the reporter
         			                        //+ create a chromosome
 
         // Load datafrom file
         ArrayList<Pattern> patterns=MyFileIO.readPatternsFromFile(inputFile);
+        doEvolution(patterns,Double.parseDouble(args[0]),Boolean.parseBoolean(args[1]));
 
 
+       // Individual best = EAReporter.getBestIndividual();
+       // best.toFile("bestResult.xml");
+        //Individual bestFromFile = new Individual("bestResult.xml");
+
+        //System.out.println(best.getGenotype().equals(bestFromFile.getGenotype()));
+
+    }
+
+    public static void doEvolution(ArrayList<Pattern> patterns,double distanceFeaturePercentage,boolean allowDuplicates) throws Exception{
+        JEvolution EA = JEvolution.getInstance();
+        //PermChromosome chrom = new PermChromosome();
         //init phenotype with problem specific patterns
-        MyPhenotype phenotype = new MyPhenotype(patterns);
-
+        MyPhenotype phenotype = new MyPhenotype(patterns,distanceFeaturePercentage,allowDuplicates);
         IntChromosome chrom = new IntChromosome(phenotype.getAttributeCount());
-        phenotype.setUsedFeatures(phenotype.getAttributeCount());
 
-        try {
             chrom.setLength(phenotype.getAttributeCount());
             //chrom.setCrossoverPoints(knnPheno.getUsedFeatures());
 
@@ -69,26 +78,15 @@ public class Main{
 //			EA.setSelection(new TournamentSelection(3));
 // 			EA.setPopulationSize(25, 50);
             EA.setFitnessThreshold(1.0);																//o better fitness not possible
-           // EA.setMaximalGenerations(20);														//o
+            EA.setMaximalGenerations(1);														//o
 
-            EAReporter.setReportLevel(JEvolutionReporter.BRIEF);
+            // EAReporter.setReportLevel(JEvolutionReporter.BRIEF);
 // 			EAReporter.useFitnessRepository(true);
 
-        } catch (JEvolutionException e) {
-            System.out.println(e.toString());
-            System.out.println("Continuing with default values.");
-        }
+
         System.out.println("Starting evolution...");
 
-        EA.doEvolve(100);
-
-
-
-        Individual best = EAReporter.getBestIndividual();
-        best.toFile("bestResult.xml");
-        //Individual bestFromFile = new Individual("bestResult.xml");
-
-        //System.out.println(best.getGenotype().equals(bestFromFile.getGenotype()));
+        EA.doEvolve();
 
     }
 

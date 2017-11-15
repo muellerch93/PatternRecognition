@@ -23,10 +23,11 @@ public class Pattern {
 		double eucDist = 0.0;
 		for(int i=0; i<nrOfFeatures; i++)
 			eucDist += (this._features[permutation.get(i)] - d2._features[permutation.get(i)]) * (this._features[permutation.get(i)] - d2._features[permutation.get(i)]);
-
-		
 		return Math.sqrt(eucDist);
 	}
+
+
+
 	
 	public int getTarget()
 	{

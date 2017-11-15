@@ -1,0 +1,15 @@
+Starting evolution...
+
+Generation 0
+Average: 0.8561 Best: 0.8832
+Best Individual: 
+C0 9|3|28|30|32|6|1|32|25|7|28|1|6|21|17|23|25|18|33|4|7|26|28|5|15|7|22|21|3|3|18|2|15|9|
+Overall Best: 0.8832 Generation: 0
+==================
+    Best individual after 1 generations
+    computed in 2.8170 seconds
+    310 elements out of 351 correct.
+    emerged in generation 0
+    with fitness 0.8832
+==================
+
