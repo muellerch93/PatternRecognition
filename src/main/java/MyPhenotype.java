@@ -10,7 +10,7 @@ import evSOLve.JEvolution.chromosomes.PermChromosome;
 public class MyPhenotype extends SortPhenotype {
 
 
-    private int _k = 3;
+    private int k = 1;
 
 
     private ArrayList<Pattern> data;
@@ -55,7 +55,7 @@ public class MyPhenotype extends SortPhenotype {
         nBases = data.size();
 
         for (int i = 0; i < nBases; i++) {
-            if (KNNClassifier.leaveOneOutEvaluate(i, perm, data, distanceFeaturePercentage, _k, distanceAllowDuplicates)) {
+            if (KNNClassifier.leaveOneOutEvaluate(i, perm, data, distanceFeaturePercentage, k, distanceAllowDuplicates)) {
                 nCorrect++;
             }
         }
