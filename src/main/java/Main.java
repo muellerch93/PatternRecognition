@@ -7,11 +7,12 @@ import evSOLve.JEvolution.Individual;
 import evSOLve.JEvolution.JEvolution;
 import evSOLve.JEvolution.JEvolutionException;
 import evSOLve.JEvolution.JEvolutionReporter;
+import evSOLve.JEvolution.chromosomes.Chromosome;
 import evSOLve.JEvolution.chromosomes.IntChromosome;
 import evSOLve.JEvolution.chromosomes.PermChromosome;
 
 
-public class Main{
+public class Main {
 
     public static void main(String[] args) throws Exception {
 
@@ -20,7 +21,7 @@ public class Main{
         // IONOSPHERE (TWO CLASS PROBLEM, good/bad signal)
         // https://archive.ics.uci.edu/ml/datasets/Ionosphere
         // number of features: 34
-         String inputFile = "data/ionosphere_mapped.data";
+        String inputFile = "data/ionosphere_mapped.data";
 
         // SEMEION HANDWRITTEN DIGITS (10 CLASS PROBLEM, 0...9)
         // https://archive.ics.uci.edu/ml/datasets/Semeion+Handwritten+Digit
@@ -38,49 +39,54 @@ public class Main{
         // String inputFile = "data/wine.data";
 
 
-
-        																				//+ call it an EA
+        //+ call it an EA
 // 		EA.setMaximization(false);																											//o minimization problem
-       // JEvolutionReporter EAReporter = (JEvolutionReporter)EA.getReporter();			                            //- get the reporter
-        			                        //+ create a chromosome
+        // JEvolutionReporter EAReporter = (JEvolutionReporter)EA.getReporter();			                            //- get the reporter
+        //+ create a chromosome
 
         // Load datafrom file
-        ArrayList<Pattern> patterns=MyFileIO.readPatternsFromFile(inputFile);
-        doEvolution(patterns,Double.parseDouble(args[0]),Boolean.parseBoolean(args[1]));
+        ArrayList<Pattern> patterns = MyFileIO.readPatternsFromFile(inputFile);
+        doEvolution(patterns,Boolean.parseBoolean(args[0]),Double.parseDouble(args[1]),Boolean.parseBoolean(args[2]));
 
 
-       // Individual best = EAReporter.getBestIndividual();
-       // best.toFile("bestResult.xml");
+        //doEvolution(patterns, true,0.3, true);
+
+        // Individual best = EAReporter.getBestIndividual();
+        // best.toFile("bestResult.xml");
         //Individual bestFromFile = new Individual("bestResult.xml");
 
         //System.out.println(best.getGenotype().equals(bestFromFile.getGenotype()));
 
     }
 
-    public static void doEvolution(ArrayList<Pattern> patterns,double distanceFeaturePercentage,boolean allowDuplicates) throws Exception{
+    public static void doEvolution(ArrayList<Pattern> patterns, boolean isIntegerEncoding, double distanceFeaturePercentage, boolean allowDuplicates) throws Exception {
         JEvolution EA = JEvolution.getInstance();
         //PermChromosome chrom = new PermChromosome();
         //init phenotype with problem specific patterns
-        MyPhenotype phenotype = new MyPhenotype(patterns,distanceFeaturePercentage,allowDuplicates);
-        IntChromosome chrom = new IntChromosome(phenotype.getAttributeCount());
 
-            chrom.setLength(phenotype.getAttributeCount());
-            //chrom.setCrossoverPoints(knnPheno.getUsedFeatures());
+        MyPhenotype phenotype = new MyPhenotype(patterns, distanceFeaturePercentage, allowDuplicates);
+        Chromosome chrom;
+        if (isIntegerEncoding)
+            chrom=new IntChromosome(phenotype.getAttributeCount());
+        else
+            chrom=new PermChromosome(phenotype.getAttributeCount());
+        chrom.setLength(phenotype.getAttributeCount());
+        //chrom.setCrossoverPoints(knnPheno.getUsedFeatures());
 
-            //- only set to justify try statement..;-)
-            chrom.setMutationRate(0.1);
+        //- only set to justify try statement..;-)
+        chrom.setMutationRate(0.1);
 //			chromX.setSoupType(Chromosome.LAPLACE);
 //			chromX.setCrossoverPoints(2);
 // 			Utilities.setRandomSeed(88);
 
-            EA.addChromosome(chrom);																//+ tell EA about your chromosome
-            EA.setPhenotype(phenotype);											                    //+ tell EA about your Phenotype class
+        EA.addChromosome(chrom);                                                                //+ tell EA about your chromosome
+        EA.setPhenotype(phenotype);                                                                //+ tell EA about your Phenotype class
 //			EA.setSelection(new TournamentSelection(3));
 // 			EA.setPopulationSize(25, 50);
-            EA.setFitnessThreshold(1.0);																//o better fitness not possible
-            EA.setMaximalGenerations(100);														//o
+        EA.setFitnessThreshold(1.0);                                                                //o better fitness not possible
+        EA.setMaximalGenerations(50);                                                        //o
 
-            // EAReporter.setReportLevel(JEvolutionReporter.BRIEF);
+        // EAReporter.setReportLevel(JEvolutionReporter.BRIEF);
 // 			EAReporter.useFitnessRepository(true);
 
 
