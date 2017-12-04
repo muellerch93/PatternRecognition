@@ -1,0 +1,189 @@
+Starting evolution...
+
+Generation 0
+Average: 0.8619 Best: 0.8974
+Best Individual: 
+C0 19|0|28|32|15|24|11|11|11|3|18|31|4|23|26|3|1|11|29|26|28|4|32|15|32|24|32|18|9|15|14|13|8|28|
+Overall Best: 0.8974 Generation: 0
+
+Generation 1
+Average: 0.8691 Best: 0.8974
+Best Individual: 
+C0 16|29|17|17|21|16|26|1|23|4|30|10|5|22|32|23|14|14|4|21|30|28|27|15|28|29|4|25|30|20|19|20|32|29|
+Overall Best: 0.8974 Generation: 0
+
+Generation 2
+Average: 0.8708 Best: 0.9031
+Best Individual: 
+C0 9|9|24|25|1|20|15|12|16|0|9|14|12|26|15|15|22|14|4|21|15|16|32|28|7|4|8|0|17|20|24|33|4|7|
+Overall Best: 0.9031 Generation: 2
+
+Generation 3
+Average: 0.8770 Best: 0.9088
+Best Individual: 
+C0 16|19|17|26|21|16|11|14|23|4|20|19|4|23|26|3|1|11|29|22|21|4|32|15|32|24|32|18|30|15|19|20|32|29|
+Overall Best: 0.9088 Generation: 3
+
+Generation 4
+Average: 0.8788 Best: 0.9088
+Best Individual: 
+C0 16|19|17|26|21|16|11|14|23|4|20|19|4|23|26|3|1|11|29|22|21|4|32|15|32|24|32|18|30|32|19|20|32|12|
+Overall Best: 0.9088 Generation: 3
+
+Generation 5
+Average: 0.8777 Best: 0.9145
+Best Individual: 
+C0 26|32|26|4|4|14|6|14|26|12|2|14|12|26|15|15|6|0|5|3|28|4|9|11|32|7|32|18|12|15|14|13|8|28|
+Overall Best: 0.9145 Generation: 5
+
+Generation 6
+Average: 0.8806 Best: 0.9174
+Best Individual: 
+C0 26|32|26|4|4|14|6|14|26|12|2|14|12|26|15|15|30|0|5|3|28|4|9|11|32|7|16|18|12|15|14|13|8|28|
+Overall Best: 0.9174 Generation: 6
+
+Generation 7
+Average: 0.8818 Best: 0.9145
+Best Individual: 
+C0 4|2|15|18|7|11|0|4|23|17|0|2|12|26|15|15|22|14|4|21|15|16|32|28|11|11|4|15|10|23|28|32|22|12|
+Overall Best: 0.9174 Generation: 6
+
+Generation 8
+Average: 0.8860 Best: 0.9145
+Best Individual: 
+C0 4|2|15|18|7|11|0|4|23|17|0|2|12|26|15|15|22|14|4|21|15|16|32|28|11|11|9|27|10|23|28|2|22|17|
+Overall Best: 0.9174 Generation: 6
+
+Generation 9
+Average: 0.8897 Best: 0.9259
+Best Individual: 
+C0 4|2|15|14|7|17|0|4|23|22|9|2|26|26|15|15|22|14|4|21|15|16|29|28|11|11|4|15|10|23|28|32|22|12|
+Overall Best: 0.9259 Generation: 9
+
+Generation 10
+Average: 0.8897 Best: 0.9117
+Best Individual: 
+C0 4|2|15|14|7|17|0|4|8|22|9|2|26|8|15|15|12|14|4|21|17|24|2|28|11|11|4|15|10|23|28|1|22|12|
+Overall Best: 0.9259 Generation: 9
+
+Generation 11
+Average: 0.8929 Best: 0.9259
+Best Individual: 
+C0 4|33|14|18|17|11|15|4|23|17|0|26|12|26|15|15|22|14|4|21|17|22|32|28|11|11|20|27|9|23|28|30|22|12|
+Overall Best: 0.9259 Generation: 9
+
+Generation 12
+Average: 0.8935 Best: 0.9174
+Best Individual: 
+C0 4|16|15|14|6|17|0|4|23|23|9|2|26|8|15|15|22|14|4|21|3|16|29|28|11|11|4|15|28|23|28|32|22|12|
+Overall Best: 0.9259 Generation: 9
+
+Generation 13
+Average: 0.8961 Best: 0.9174
+Best Individual: 
+C0 17|32|26|4|14|16|26|1|13|12|13|26|15|20|15|5|4|14|4|21|15|14|32|28|11|6|13|19|16|15|14|12|8|11|
+Overall Best: 0.9259 Generation: 9
+
+Generation 14
+Average: 0.8977 Best: 0.9231
+Best Individual: 
+C0 4|16|15|14|6|17|16|4|23|1|8|14|0|26|15|23|12|26|24|4|13|4|16|18|23|7|32|8|10|3|21|23|22|12|
+Overall Best: 0.9259 Generation: 9
+
+Generation 15
+Average: 0.8954 Best: 0.9288
+Best Individual: 
+C0 17|13|15|4|2|9|26|1|30|17|20|26|12|26|15|15|22|14|5|1|17|6|23|3|4|11|31|15|13|17|1|32|24|11|
+Overall Best: 0.9288 Generation: 15
+
+Generation 16
+Average: 0.8949 Best: 0.9117
+Best Individual: 
+C0 23|16|13|14|16|17|0|4|23|23|9|2|26|20|15|15|12|14|2|21|20|16|29|28|11|11|4|6|28|23|18|32|21|19|
+Overall Best: 0.9288 Generation: 15
+
+Generation 17
+Average: 0.8960 Best: 0.9202
+Best Individual: 
+C0 17|15|15|20|6|17|21|4|23|23|9|2|26|8|2|14|16|26|17|1|17|30|2|18|15|11|22|15|10|23|28|29|24|12|
+Overall Best: 0.9288 Generation: 15
+
+Generation 18
+Average: 0.8956 Best: 0.9202
+Best Individual: 
+C0 4|4|20|29|12|0|0|8|23|31|4|12|2|0|26|0|12|12|24|7|23|4|4|18|2|7|32|12|10|28|25|20|8|22|
+Overall Best: 0.9288 Generation: 15
+
+Generation 19
+Average: 0.8963 Best: 0.9231
+Best Individual: 
+C0 4|4|20|29|12|0|0|8|23|31|4|12|2|0|26|0|12|32|24|7|23|4|4|18|2|7|32|12|16|14|25|11|8|22|
+Overall Best: 0.9288 Generation: 15
+
+Generation 20
+Average: 0.8952 Best: 0.9231
+Best Individual: 
+C0 4|4|20|29|12|0|0|8|23|31|4|12|2|0|26|0|12|32|24|7|23|4|4|23|2|7|32|12|27|14|25|11|8|23|
+Overall Best: 0.9288 Generation: 15
+
+Generation 21
+Average: 0.8939 Best: 0.9145
+Best Individual: 
+C0 4|4|20|29|12|0|0|8|23|31|4|12|2|0|15|15|11|15|16|12|15|4|11|31|4|20|26|8|27|14|25|11|8|23|
+Overall Best: 0.9288 Generation: 15
+
+Generation 22
+Average: 0.8949 Best: 0.9345
+Best Individual: 
+C0 4|23|15|4|22|4|26|21|25|23|8|2|26|0|15|4|24|14|26|3|15|30|2|20|2|7|32|12|2|28|25|20|13|22|
+Overall Best: 0.9345 Generation: 22
+
+Generation 23
+Average: 0.8928 Best: 0.9259
+Best Individual: 
+C0 4|23|15|32|22|4|26|21|25|23|8|2|26|0|15|4|24|14|26|3|20|30|2|20|2|7|32|12|2|28|25|20|13|22|
+Overall Best: 0.9345 Generation: 22
+
+Generation 24
+Average: 0.8969 Best: 0.9231
+Best Individual: 
+C0 4|4|20|15|12|0|0|8|23|31|4|12|1|0|14|17|31|14|4|9|21|27|32|2|15|14|9|10|4|18|20|17|8|23|
+Overall Best: 0.9345 Generation: 22
+
+Generation 25
+Average: 0.8963 Best: 0.9202
+Best Individual: 
+C0 4|2|3|4|3|22|10|1|16|26|20|15|12|26|23|29|23|8|26|8|7|14|14|23|31|21|8|9|20|23|13|24|31|1|
+Overall Best: 0.9345 Generation: 22
+
+Generation 26
+Average: 0.8973 Best: 0.9202
+Best Individual: 
+C0 4|23|9|16|22|8|26|21|1|23|8|2|26|6|15|14|25|26|27|22|30|17|9|12|22|6|12|17|27|11|18|1|22|29|
+Overall Best: 0.9345 Generation: 22
+
+Generation 27
+Average: 0.8968 Best: 0.9202
+Best Individual: 
+C0 4|16|1|20|6|17|26|26|12|17|17|19|23|26|15|32|12|2|2|32|3|9|14|27|29|23|12|3|25|10|17|17|22|12|
+Overall Best: 0.9345 Generation: 22
+
+Generation 28
+Average: 0.8952 Best: 0.9202
+Best Individual: 
+C0 4|28|3|4|12|22|3|24|19|23|24|1|26|0|21|4|24|14|26|14|15|0|17|27|27|21|8|9|3|23|17|26|24|1|
+Overall Best: 0.9345 Generation: 22
+
+Generation 29
+Average: 0.8912 Best: 0.9259
+Best Individual: 
+C0 4|4|3|4|12|0|0|3|1|23|15|18|3|0|15|16|7|0|8|23|23|8|15|20|24|33|3|9|21|23|10|24|0|16|
+Overall Best: 0.9345 Generation: 22
+==================
+    Best individual after 30 generations
+    computed in 78.8150 seconds
+    328 elements out of 351 correct.
+    emerged in generation 22
+    with fitness 0.9345
+==================
+

@@ -21,7 +21,7 @@ public class Main {
         // IONOSPHERE (TWO CLASS PROBLEM, good/bad signal)
         // https://archive.ics.uci.edu/ml/datasets/Ionosphere
         // number of features: 34
-        String inputFile = "data/ionosphere_mapped.data";
+        //String inputFile = "data/ionosphere_mapped.data";
 
         // SEMEION HANDWRITTEN DIGITS (10 CLASS PROBLEM, 0...9)
         // https://archive.ics.uci.edu/ml/datasets/Semeion+Handwritten+Digit
@@ -44,9 +44,10 @@ public class Main {
         // JEvolutionReporter EAReporter = (JEvolutionReporter)EA.getReporter();			                            //- get the reporter
         //+ create a chromosome
 
+        String inputFilePath= args[0];
         // Load datafrom file
-        ArrayList<Pattern> patterns = MyFileIO.readPatternsFromFile(inputFile);
-        doEvolution(patterns,Boolean.parseBoolean(args[0]),Double.parseDouble(args[1]),Boolean.parseBoolean(args[2]));
+        ArrayList<Pattern> patterns = MyFileIO.readPatternsFromFile(inputFilePath);
+        doEvolution(patterns,Boolean.parseBoolean(args[1]),Double.parseDouble(args[2]),Boolean.parseBoolean(args[3]));
 
 
         //doEvolution(patterns, true,0.3, true);
@@ -84,7 +85,7 @@ public class Main {
 //			EA.setSelection(new TournamentSelection(3));
 // 			EA.setPopulationSize(25, 50);
         EA.setFitnessThreshold(1.0);                                                                //o better fitness not possible
-        EA.setMaximalGenerations(50);                                                        //o
+        EA.setMaximalGenerations(30);                                                        //o
 
         // EAReporter.setReportLevel(JEvolutionReporter.BRIEF);
 // 			EAReporter.useFitnessRepository(true);
