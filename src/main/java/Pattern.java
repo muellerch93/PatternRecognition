@@ -18,11 +18,11 @@ public class Pattern {
 
 	}
 	
-	public double distanceTo(Pattern d2, ArrayList<Integer> permutation, int nrOfFeatures)
+	public double distanceTo(Pattern other, ArrayList<Integer> permutation, int nrOfFeatures)
 	{
 		double eucDist = 0.0;
 		for(int i=0; i<nrOfFeatures; i++)
-			eucDist += (this._features[permutation.get(i)] - d2._features[permutation.get(i)]) * (this._features[permutation.get(i)] - d2._features[permutation.get(i)]);
+			eucDist += (this._features[permutation.get(i)] - other._features[permutation.get(i)]) * (this._features[permutation.get(i)] - other._features[permutation.get(i)]);
 		return Math.sqrt(eucDist);
 	}
 

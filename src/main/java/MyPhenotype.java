@@ -10,12 +10,12 @@ import evSOLve.JEvolution.chromosomes.PermChromosome;
 public class MyPhenotype extends SortPhenotype {
 
 
-    private int k = 3;
+    private int k = 1;
 
 
     private ArrayList<Pattern> data;
     private double distanceFeaturePercentage;
-    private boolean distanceAllowDuplicates;
+    private boolean isEuclideanDistance;
 
     /**
      * Constructs the basic phenotype.
@@ -30,10 +30,10 @@ public class MyPhenotype extends SortPhenotype {
      * }
      **/
 
-    public MyPhenotype(ArrayList<Pattern> patterns, double distanceFeaturePercentage, boolean distanceAllowDuplicates) throws IOException {
+    public MyPhenotype(ArrayList<Pattern> patterns, double distanceFeaturePercentage, boolean isEuclideanDistance) throws IOException {
         this.data = patterns;
         this.distanceFeaturePercentage = distanceFeaturePercentage;
-        this.distanceAllowDuplicates = distanceAllowDuplicates;
+        this.isEuclideanDistance = isEuclideanDistance;
     }
 
 
@@ -55,7 +55,7 @@ public class MyPhenotype extends SortPhenotype {
         nBases = data.size();
 
         for (int i = 0; i < nBases; i++) {
-            if (KNNClassifier.leaveOneOutEvaluate(i, perm, data, distanceFeaturePercentage, k, distanceAllowDuplicates)) {
+            if (KNNClassifier.leaveOneOutEvaluate(i, perm, data, distanceFeaturePercentage, k, isEuclideanDistance)) {
                 nCorrect++;
             }
         }

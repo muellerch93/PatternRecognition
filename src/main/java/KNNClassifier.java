@@ -26,13 +26,13 @@ public class KNNClassifier
 	}
 
 	public static boolean leaveOneOutEvaluate( int testPatternId, ArrayList<Integer> individual,ArrayList<Pattern> patterns, double distanceFeaturePercentage,
-											   int K, boolean allowDuplicates) {
+											   int K, boolean isEuclideanDistance) {
 
         HashMap<Pattern,Double> unsorted = new HashMap<Pattern,Double>();
 		Pattern testPattern = patterns.get(testPatternId);
 		ArrayList<Integer> newIndividual = new ArrayList<Integer>();
 
-		if(!allowDuplicates) {
+		if(!isEuclideanDistance) {
 			//remove duplicates in permutation
 			for (Integer cFeature : individual)
 				if (!newIndividual.contains(cFeature))

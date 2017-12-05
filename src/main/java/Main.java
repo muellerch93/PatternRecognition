@@ -1,12 +1,8 @@
 
 
-import java.io.IOException;
 import java.util.ArrayList;
 
-import evSOLve.JEvolution.Individual;
 import evSOLve.JEvolution.JEvolution;
-import evSOLve.JEvolution.JEvolutionException;
-import evSOLve.JEvolution.JEvolutionReporter;
 import evSOLve.JEvolution.chromosomes.Chromosome;
 import evSOLve.JEvolution.chromosomes.IntChromosome;
 import evSOLve.JEvolution.chromosomes.PermChromosome;
@@ -43,13 +39,28 @@ public class Main {
 // 		EA.setMaximization(false);																											//o minimization problem
         // JEvolutionReporter EAReporter = (JEvolutionReporter)EA.getReporter();			                            //- get the reporter
         //+ create a chromosome
+        ArrayList<Pattern> patterns;
+        boolean isIntegerEncoding;
+        double distanceFeaturePercentage;
+        boolean isEuclideanDistance;
 
-        String inputFilePath= args[0];
-        // Load datafrom file
-        ArrayList<Pattern> patterns = MyFileIO.readPatternsFromFile(inputFilePath);
-        doEvolution(patterns,Boolean.parseBoolean(args[1]),Double.parseDouble(args[2]),Boolean.parseBoolean(args[3]));
+        if(args.length == 4){
+            String inputFilePath= args[0];
+            patterns = MyFileIO.readPatternsFromFile(inputFilePath);
+            isIntegerEncoding = Boolean.parseBoolean(args[1]);
+            distanceFeaturePercentage = Double.parseDouble(args[2]);
+            isEuclideanDistance = Boolean.parseBoolean(args[3]);
+
+        }else{
+            patterns = MyFileIO.readPatternsFromFile("data/ionosphere_mapped.data");
+            isIntegerEncoding = true;
+            distanceFeaturePercentage = 0.3;
+            isEuclideanDistance = true;
+
+        }
 
 
+        doEvolution(patterns,isIntegerEncoding,distanceFeaturePercentage,isEuclideanDistance);
         //doEvolution(patterns, true,0.3, true);
 
         // Individual best = EAReporter.getBestIndividual();
@@ -60,12 +71,13 @@ public class Main {
 
     }
 
-    public static void doEvolution(ArrayList<Pattern> patterns, boolean isIntegerEncoding, double distanceFeaturePercentage, boolean allowDuplicates) throws Exception {
+    public static void doEvolution(ArrayList<Pattern> patterns, boolean isIntegerEncoding, double distanceFeaturePercentage,
+                                   boolean isEuclideanDistance) throws Exception {
         JEvolution EA = JEvolution.getInstance();
         //PermChromosome chrom = new PermChromosome();
         //init phenotype with problem specific patterns
 
-        MyPhenotype phenotype = new MyPhenotype(patterns, distanceFeaturePercentage, allowDuplicates);
+        MyPhenotype phenotype = new MyPhenotype(patterns, distanceFeaturePercentage, isEuclideanDistance);
         Chromosome chrom;
         if (isIntegerEncoding)
             chrom=new IntChromosome(phenotype.getAttributeCount());
@@ -85,7 +97,7 @@ public class Main {
 //			EA.setSelection(new TournamentSelection(3));
 // 			EA.setPopulationSize(25, 50);
         EA.setFitnessThreshold(1.0);                                                                //o better fitness not possible
-        EA.setMaximalGenerations(30);                                                        //o
+        EA.setMaximalGenerations(50);                                                        //o
 
         // EAReporter.setReportLevel(JEvolutionReporter.BRIEF);
 // 			EAReporter.useFitnessRepository(true);
