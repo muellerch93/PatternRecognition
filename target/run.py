@@ -52,9 +52,9 @@ def run(data, isIntegerEncoding, allowDuplicates):
 data = ["ionosphere_mapped","semeion_mapped"]
 
 #evolution with integer encoding
-file1 = run(data[0],"true","true")
-file2 = run(data[0],"true","false")
+file1 = run(data[1],"true","true")
+file2 = run(data[1],"true","false")
 #evolution with binary encoding, duplicates do not occur in this approach 
-file3 = run(data[0],"false","false")
+file3 = run(data[1],"false","false")
 call(["gnuplot","-e","file1='%s.dat';file2='%s.dat';file3='%s.dat';outputFile='results/%s/%s.eps'" % (file1,file2,file3,data[0],"all"), "results/plot_all.plt"])
 
