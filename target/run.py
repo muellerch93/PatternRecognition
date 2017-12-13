@@ -56,8 +56,10 @@ data = ["ionosphere_mapped","semeion_mapped"]
 #file2 = run(data[1],"true","false")
 #evolution with binary encoding, duplicates do not occur in this approach 
 #file3 = run(data[1],"false","false")
-file1 = "results/semeion_mapped/semeion_mapped_Integer_total_true.dat";
-file2 = "results/semeion_mapped/semeion_mapped_Integer_total_false.dat";
-file3 = "results/semeion_mapped/semeion_mapped_Binary_total_false.dat";
-call(["gnuplot","-e","file1='%s.dat';file2='%s.dat';file3='%s.dat';outputFile='results/%s/%s.eps'" % (file1,file2,file3,data[0],"all"), "results/plot_all.plt"])
+
+i = 0 
+file1 = "results/%s/%s_Integer_total_true" % (data[i],data[i])
+file2 = "results/%s/%s_Integer_total_false" % (data[i],data[i])
+file3 = "results/%s/%s_Binary_total_false" % (data[i],data[i])
+call(["gnuplot","-e","file1='%s.dat';file2='%s.dat';file3='%s.dat';outputFile='results/%s/%s.eps'" % (file1,file2,file3,data[i],"all"), "results/plot_all.plt"])
 
