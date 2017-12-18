@@ -38,10 +38,17 @@ def run(data, isIntegerEncoding, allowDuplicates):
 			bestFitnessValues.append(bestFitnessValues[i-2])
 	else:
 		encoding = "Binary"
-		for i in range(1,11):
+		if(data == "semeion_mapped"):
+			bottom = 5
+			for i in range(1,bottom):
+				bestFitnessValues.append(0)
+		else: 
+			bottom = 1
+		for i in range(bottom,11):
 			distanceFeaturePercentage = i/10.0
 			bestFitnessValues.append(doEvolve(data,isIntegerEncoding,allowDuplicates,distanceFeaturePercentage))
 			print "%s" % bestFitnessValues[i-1]
+	
 	target_path = "results/%s/%s_%s_total_%s" % (data,data,encoding,allowDuplicates)
 	target_file = open("%s.dat" % target_path,'w')
 	for i in range(1,11):
@@ -51,15 +58,16 @@ def run(data, isIntegerEncoding, allowDuplicates):
 
 data = ["ionosphere_mapped","semeion_mapped"]
 
-#evolution with integer encoding
-#file1 = run(data[1],"true","true")
-#file2 = run(data[1],"true","false")
-#evolution with binary encoding, duplicates do not occur in this approach 
-#file3 = run(data[1],"false","false")
-
 i = 0 
+#evolution with integer encoding
+file1 = run(data[i],"true","true")
+file2 = run(data[i],"true","false")
+#evolution with binary encoding, duplicates do not occur in this approach 
+file3 = run(data[i],"false","false")
+
+
 file1 = "results/%s/%s_Integer_total_true" % (data[i],data[i])
 file2 = "results/%s/%s_Integer_total_false" % (data[i],data[i])
 file3 = "results/%s/%s_Binary_total_false" % (data[i],data[i])
 call(["gnuplot","-e","file1='%s.dat';file2='%s.dat';file3='%s.dat';outputFile='results/%s/%s.eps'" % (file1,file2,file3,data[i],"all"), "results/plot_all.plt"])
-
+#call(["gnuplot","-e","filename='%s.dat';outputFile='results/%s/%s.eps'" % (file3,data[1],"permutation"), "results/plot.plt"])
