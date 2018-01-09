@@ -97,7 +97,7 @@ public class Main {
 //			EA.setSelection(new TournamentSelection(3));
 // 			EA.setPopulationSize(25, 50);
         EA.setFitnessThreshold(1.0);                                                                //o better fitness not possible
-        EA.setMaximalGenerations(100);                                                        //o
+        EA.setMaximalGenerations(20);                                                        //o
 
         // EAReporter.setReportLevel(JEvolutionReporter.BRIEF);
 // 			EAReporter.useFitnessRepository(true);

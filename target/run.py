@@ -18,7 +18,7 @@ def doEvolve(data,isIntegerEncoding,allowDuplicates,distanceFeaturePercentage):
 	else:
 		encoding = "Permutation"
 
-	args = ['PatternRecognition-1.0-SNAPSHOT.jar',"%s" % "data/"+data+".data",isIntegerEncoding,str(distanceFeaturePercentage), allowDuplicates] 
+	args = ['PatternRecognition-1.0-SNAPSHOT.jar',"%s" % "data/"+data+".data",isIntegerEncoding,str(distanceFeaturePercentage), allowDuplicates]
 	result = jarWrapper(*args)
 	target_path = "results/%s/%s_%s_%s_%s.txt" % (data,data,encoding,str(distanceFeaturePercentage*100),allowDuplicates)
 	target_file = open(target_path,'w')
@@ -49,7 +49,8 @@ def run(data, isIntegerEncoding, allowDuplicates):
 			bottom = 5
 			for i in range(1,bottom):
 				bestFitnessValues.append(0)
-		else: 
+				averages.append(0)
+		else:
 			bottom = 1
 		for i in range(bottom,11):
 			distanceFeaturePercentage = i/10.0
@@ -57,7 +58,7 @@ def run(data, isIntegerEncoding, allowDuplicates):
 			bestFitnessValues.append(bestFitness)
 			averages.append(avgFitnessValues)
 			print "%s" % bestFitnessValues[i-1]
-	
+
 	target_path = "results/%s/%s_%s_total_%s" % (data,data,encoding,allowDuplicates)
 	target_file = open("%s.dat" % target_path,'w')
 	maxFitnessIndex = 0
@@ -66,7 +67,7 @@ def run(data, isIntegerEncoding, allowDuplicates):
 			maxFitnessIndex = i-1
 		target_file.write("%s    %s\n" % (i*10,bestFitnessValues[i-1]))
 	target_file.close()
-	
+
 	# write avg of generations for run (cutting point) that led to the overal best individual (only relevant for permutation encoding)
 	print "avg. at %s : %s" % (maxFitnessIndex,averages[maxFitnessIndex])
 	avg_path = "results/%s/%s_%s_avg_%s" % (data,data,encoding,allowDuplicates)
@@ -80,11 +81,11 @@ def run(data, isIntegerEncoding, allowDuplicates):
 
 data = ["ionosphere_mapped","semeion_mapped"]
 
-i = 0 
+i = 1
 #evolution with integer encoding
 file1,avg1 = run(data[i],"true","true")
 file2,avg2 = run(data[i],"true","false")
-#evolution with permution encoding, duplicates do not occur in this approach 
+#evolution with permution encoding, duplicates do not occur in this approach
 file3,avg3 = run(data[i],"false","false")
 
 
