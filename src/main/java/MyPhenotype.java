@@ -49,13 +49,22 @@ public class MyPhenotype extends SortPhenotype {
 
     public void doOntogeny(List genotype) {
         IntChromosome chrom = (IntChromosome) genotype.get(0);
-        ArrayList<Integer> perm = (ArrayList<Integer>) chrom.getBases();
+        ArrayList<Integer> individual = (ArrayList<Integer>) chrom.getBases();
 
+        ArrayList<Integer> newIndividual = new ArrayList<Integer>();
+        if(!isEuclideanDistance) {
+            //remove duplicates in permutation
+            for (Integer cFeature : individual)
+                if (!newIndividual.contains(cFeature))
+                    newIndividual.add(cFeature);
+        }else
+            newIndividual = individual;
         nCorrect = 0;
         nBases = data.size();
-
+        //this function is called for each individual once
+       // System.out.println(individual);
         for (int i = 0; i < nBases; i++) {
-            if (KNNClassifier.leaveOneOutEvaluate(i, perm, data, distanceFeaturePercentage, k, isEuclideanDistance)) {
+            if (KNNClassifier.leaveOneOutEvaluate(i, newIndividual, data, distanceFeaturePercentage, k)) {
                 nCorrect++;
             }
         }

@@ -26,28 +26,23 @@ public class KNNClassifier
 	}
 
 	public static boolean leaveOneOutEvaluate( int testPatternId, ArrayList<Integer> individual,ArrayList<Pattern> patterns, double distanceFeaturePercentage,
-											   int K, boolean isEuclideanDistance) {
+											   int K) {
 
         HashMap<Pattern,Double> unsorted = new HashMap<Pattern,Double>();
 		Pattern testPattern = patterns.get(testPatternId);
-		ArrayList<Integer> newIndividual = new ArrayList<Integer>();
 
-		if(!isEuclideanDistance) {
-			//remove duplicates in permutation
-			for (Integer cFeature : individual)
-				if (!newIndividual.contains(cFeature))
-					newIndividual.add(cFeature);
-		}else
-			newIndividual = individual;
+
+		//TODO: build the individual in question before
+
 
 		//we got rid of duplicates, now we can determine the number of features we want to use for distance calculation
-		int nrFeaturesToUse = (int) Math.floor((double) newIndividual.size() * distanceFeaturePercentage);
+		int nrFeaturesToUse = (int) Math.floor((double) individual.size() * distanceFeaturePercentage);
 
 		//add patterns and their distance to the testPattern into a hashmap,
 		for(int i=0; i<patterns.size(); i++) {
 			if (i != testPatternId) {
 				//unsorted.put(patterns.get(i), patterns.get(i).distanceTo(testPattern, newIndividual, subselectCount));
-				unsorted.put(patterns.get(i), patterns.get(i).distanceTo(testPattern, newIndividual, nrFeaturesToUse));
+				unsorted.put(patterns.get(i), patterns.get(i).distanceTo(testPattern, individual, nrFeaturesToUse));
 			}
 		}
 

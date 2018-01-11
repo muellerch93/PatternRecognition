@@ -9,6 +9,7 @@ def jarWrapper(*args):
 		line = process.stdout.readline()
 		if line != '' and line.endswith('\n'):
 			result += line
+	#print result
 	return result
 
 
@@ -81,7 +82,7 @@ def run(data, isIntegerEncoding, allowDuplicates):
 
 data = ["ionosphere_mapped","semeion_mapped"]
 
-i = 1
+i = 0
 #evolution with integer encoding
 file1,avg1 = run(data[i],"true","true")
 file2,avg2 = run(data[i],"true","false")

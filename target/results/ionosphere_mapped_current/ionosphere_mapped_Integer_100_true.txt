@@ -1,0 +1,177 @@
+Starting evolution...
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+
+Generation 0
+Average: 0.8745 Best: 0.9003
+Best Individual: 
+C0 26|1|27|18|22|4|13|7|28|12|11|2|12|15|32|12|27|30|2|5|10|14|11|20|26|19|4|31|19|1|28|1|18|4|
+Overall Best: 0.9003 Generation: 0
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+
+Generation 1
+Average: 0.8793 Best: 0.9088
+Best Individual: 
+C0 33|31|6|23|1|11|27|23|4|12|11|2|12|15|17|12|27|30|13|5|10|14|11|8|26|19|4|19|19|4|10|23|18|25|
+Overall Best: 0.9088 Generation: 1
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+ontogony
+
+Generation 2
+Average: 0.8813 Best: 0.9088
+Best Individual: 
+C0 33|31|6|23|13|11|27|23|4|12|11|2|12|15|17|12|27|30|13|10|4|17|24|12|3|29|20|20|28|32|10|23|18|25|
+Overall Best: 0.9088 Generation: 1
+==================
+    Best individual after 3 generations
+    computed in 10.4340 seconds
+    319 elements out of 351 correct.
+    emerged in generation 1
+    with fitness 0.9088
+==================
+

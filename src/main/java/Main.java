@@ -95,9 +95,9 @@ public class Main {
         EA.addChromosome(chrom);                                                                //+ tell EA about your chromosome
         EA.setPhenotype(phenotype);                                                                //+ tell EA about your Phenotype class
 //			EA.setSelection(new TournamentSelection(3));
-// 			EA.setPopulationSize(25, 50);
+		EA.setPopulationSize(5, 10);
         EA.setFitnessThreshold(1.0);                                                                //o better fitness not possible
-        EA.setMaximalGenerations(20);                                                        //o
+        EA.setMaximalGenerations(30);                                                        //o
 
         // EAReporter.setReportLevel(JEvolutionReporter.BRIEF);
 // 			EAReporter.useFitnessRepository(true);
