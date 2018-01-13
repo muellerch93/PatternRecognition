@@ -1,2 +1,7 @@
 SortPhenotype.class
 Main.class
+MyPhenotype.class
+KNNClassifier.class
+Pattern.class
+KNNClassifier$1.class
+MyFileIO.class

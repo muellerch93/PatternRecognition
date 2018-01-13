@@ -10,6 +10,8 @@ import evSOLve.JEvolution.chromosomes.PermChromosome;
 
 public class Main {
 
+
+    public static int populationSize;
     public static void main(String[] args) throws Exception {
 
         // The three data sets to use:
@@ -43,6 +45,8 @@ public class Main {
         boolean isIntegerEncoding;
         double distanceFeaturePercentage;
         boolean isEuclideanDistance;
+
+
 
         if(args.length == 4){
             String inputFilePath= args[0];
@@ -95,13 +99,13 @@ public class Main {
         EA.addChromosome(chrom);                                                                //+ tell EA about your chromosome
         EA.setPhenotype(phenotype);                                                                //+ tell EA about your Phenotype class
 //			EA.setSelection(new TournamentSelection(3));
-		EA.setPopulationSize(5, 10);
+		//EA.setPopulationSize(5, 10);
         EA.setFitnessThreshold(1.0);                                                                //o better fitness not possible
-        EA.setMaximalGenerations(30);                                                        //o
+        EA.setMaximalGenerations(3);                                                        //o
 
         // EAReporter.setReportLevel(JEvolutionReporter.BRIEF);
 // 			EAReporter.useFitnessRepository(true);
-
+        populationSize = EA.getPopulationSize();
 
         System.out.println("Starting evolution...");
 

@@ -1,0 +1,30 @@
+Starting evolution...
+length: 34.0
+
+Generation 0
+Average: 0.8695 Best: 0.8946
+Best Individual: 
+C0 0|29|3|13|4|24|7|18|31|1|5|32|22|2|14|15|16|27|30|19|10|21|12|9|20|25|26|6|28|23|11|8|17|33|
+Overall Best: 0.8946 Generation: 0
+length: 34.0
+
+Generation 1
+Average: 0.8717 Best: 0.8946
+Best Individual: 
+C0 0|29|3|13|14|24|7|18|31|1|5|32|22|2|4|10|21|27|30|19|15|16|12|9|20|25|26|6|28|23|11|8|17|33|
+Overall Best: 0.8946 Generation: 0
+length: 34.0
+
+Generation 2
+Average: 0.8740 Best: 0.8946
+Best Individual: 
+C0 0|22|3|6|14|24|7|18|31|1|5|32|29|2|4|10|21|27|30|19|15|16|9|23|20|25|26|13|28|12|11|8|17|33|
+Overall Best: 0.8946 Generation: 0
+==================
+    Best individual after 3 generations
+    computed in 5.7730 seconds
+    314 elements out of 351 correct.
+    emerged in generation 0
+    with fitness 0.8946
+==================
+

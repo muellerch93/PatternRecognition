@@ -1,6 +1,7 @@
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 
 import evSOLve.JEvolution.chromosomes.IntChromosome;
@@ -16,7 +17,9 @@ public class MyPhenotype extends SortPhenotype {
     private ArrayList<Pattern> data;
     private double distanceFeaturePercentage;
     private boolean isEuclideanDistance;
-
+    private static Random rand;
+    private static int individualCount = 1;
+    private static double sum;
     /**
      * Constructs the basic phenotype.
      *
@@ -31,6 +34,7 @@ public class MyPhenotype extends SortPhenotype {
      **/
 
     public MyPhenotype(ArrayList<Pattern> patterns, double distanceFeaturePercentage, boolean isEuclideanDistance) throws IOException {
+        rand = new Random();
         this.data = patterns;
         this.distanceFeaturePercentage = distanceFeaturePercentage;
         this.isEuclideanDistance = isEuclideanDistance;
@@ -52,13 +56,26 @@ public class MyPhenotype extends SortPhenotype {
         ArrayList<Integer> individual = (ArrayList<Integer>) chrom.getBases();
 
         ArrayList<Integer> newIndividual = new ArrayList<Integer>();
-        if(!isEuclideanDistance) {
-            //remove duplicates in permutation
-            for (Integer cFeature : individual)
-                if (!newIndividual.contains(cFeature))
-                    newIndividual.add(cFeature);
-        }else
-            newIndividual = individual;
+
+        //remove duplicates in permutation
+        for (Integer cFeature : individual)
+            if (!newIndividual.contains(cFeature))
+                newIndividual.add(cFeature);
+        if(!isEuclideanDistance)
+            individual = newIndividual;
+
+
+        sum += individual.size();
+
+        individualCount++;
+
+        if (individualCount > Main.populationSize) {
+            System.out.println("length: "+sum/Main.populationSize);
+            individualCount = 1;
+            sum = 0;
+        }
+
+
         nCorrect = 0;
         nBases = data.size();
         //this function is called for each individual once
