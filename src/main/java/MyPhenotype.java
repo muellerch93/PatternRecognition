@@ -1,5 +1,6 @@
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
@@ -20,6 +21,8 @@ public class MyPhenotype extends SortPhenotype {
     private static Random rand;
     private static int individualCount = 1;
     private static double sum;
+    private static double maxFitness;
+    private static int featureOccurrenceCount[];
     /**
      * Constructs the basic phenotype.
      *
@@ -36,6 +39,7 @@ public class MyPhenotype extends SortPhenotype {
     public MyPhenotype(ArrayList<Pattern> patterns, double distanceFeaturePercentage, boolean isEuclideanDistance) throws IOException {
         rand = new Random();
         this.data = patterns;
+        featureOccurrenceCount = new int[patterns.get(0)._features.length];
         this.distanceFeaturePercentage = distanceFeaturePercentage;
         this.isEuclideanDistance = isEuclideanDistance;
     }
@@ -58,19 +62,23 @@ public class MyPhenotype extends SortPhenotype {
         ArrayList<Integer> newIndividual = new ArrayList<Integer>();
 
         //remove duplicates in permutation
-        for (Integer cFeature : individual)
+        for (Integer cFeature : individual) {
             if (!newIndividual.contains(cFeature))
                 newIndividual.add(cFeature);
+            featureOccurrenceCount[cFeature]++;
+        }
         if(!isEuclideanDistance)
             individual = newIndividual;
 
 
-        sum += individual.size();
+        sum += newIndividual.size();
 
         individualCount++;
 
         if (individualCount > Main.populationSize) {
             System.out.println("length: "+sum/Main.populationSize);
+            System.out.println("feature_occurency: "+ Arrays.toString(featureOccurrenceCount));
+            featureOccurrenceCount = new int[featureOccurrenceCount.length];
             individualCount = 1;
             sum = 0;
         }
@@ -81,7 +89,7 @@ public class MyPhenotype extends SortPhenotype {
         //this function is called for each individual once
        // System.out.println(individual);
         for (int i = 0; i < nBases; i++) {
-            if (KNNClassifier.leaveOneOutEvaluate(i, newIndividual, data, distanceFeaturePercentage, k)) {
+            if (KNNClassifier.leaveOneOutEvaluate(i, individual, data, distanceFeaturePercentage, k)) {
                 nCorrect++;
             }
         }

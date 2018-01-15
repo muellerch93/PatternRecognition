@@ -42,7 +42,7 @@ public class Main {
         // JEvolutionReporter EAReporter = (JEvolutionReporter)EA.getReporter();			                            //- get the reporter
         //+ create a chromosome
         ArrayList<Pattern> patterns;
-        boolean isIntegerEncoding;
+        String encoding;
         double distanceFeaturePercentage;
         boolean isEuclideanDistance;
 
@@ -51,20 +51,20 @@ public class Main {
         if(args.length == 4){
             String inputFilePath= args[0];
             patterns = MyFileIO.readPatternsFromFile(inputFilePath);
-            isIntegerEncoding = Boolean.parseBoolean(args[1]);
+            encoding = args[1];
             distanceFeaturePercentage = Double.parseDouble(args[2]);
             isEuclideanDistance = Boolean.parseBoolean(args[3]);
 
         }else{
             patterns = MyFileIO.readPatternsFromFile("data/ionosphere_mapped.data");
-            isIntegerEncoding = true;
+            encoding = "integer";
             distanceFeaturePercentage = 0.3;
             isEuclideanDistance = true;
 
         }
 
 
-        doEvolution(patterns,isIntegerEncoding,distanceFeaturePercentage,isEuclideanDistance);
+        doEvolution(patterns,encoding,distanceFeaturePercentage,isEuclideanDistance);
         //doEvolution(patterns, true,0.3, true);
 
         // Individual best = EAReporter.getBestIndividual();
@@ -75,7 +75,7 @@ public class Main {
 
     }
 
-    public static void doEvolution(ArrayList<Pattern> patterns, boolean isIntegerEncoding, double distanceFeaturePercentage,
+    public static void doEvolution(ArrayList<Pattern> patterns, String encoding, double distanceFeaturePercentage,
                                    boolean isEuclideanDistance) throws Exception {
         JEvolution EA = JEvolution.getInstance();
         //PermChromosome chrom = new PermChromosome();
@@ -83,7 +83,7 @@ public class Main {
 
         MyPhenotype phenotype = new MyPhenotype(patterns, distanceFeaturePercentage, isEuclideanDistance);
         Chromosome chrom;
-        if (isIntegerEncoding)
+        if (encoding.equals("integer"))
             chrom=new IntChromosome(phenotype.getAttributeCount());
         else
             chrom=new PermChromosome(phenotype.getAttributeCount());
@@ -101,7 +101,7 @@ public class Main {
 //			EA.setSelection(new TournamentSelection(3));
 		//EA.setPopulationSize(5, 10);
         EA.setFitnessThreshold(1.0);                                                                //o better fitness not possible
-        EA.setMaximalGenerations(3);                                                        //o
+        EA.setMaximalGenerations(50);                                                        //o
 
         // EAReporter.setReportLevel(JEvolutionReporter.BRIEF);
 // 			EAReporter.useFitnessRepository(true);
