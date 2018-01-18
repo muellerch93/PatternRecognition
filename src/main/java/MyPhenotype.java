@@ -70,7 +70,6 @@ public class MyPhenotype extends SortPhenotype {
         if(!isEuclideanDistance)
             individual = newIndividual;
 
-
         sum += newIndividual.size();
 
         individualCount++;
@@ -87,12 +86,15 @@ public class MyPhenotype extends SortPhenotype {
         nCorrect = 0;
         nBases = data.size();
         //this function is called for each individual once
+
        // System.out.println(individual);
+        //System.out.println(nBases);
         for (int i = 0; i < nBases; i++) {
             if (KNNClassifier.leaveOneOutEvaluate(i, individual, data, distanceFeaturePercentage, k)) {
                 nCorrect++;
             }
         }
+
 
 
     }

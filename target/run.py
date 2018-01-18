@@ -32,6 +32,7 @@ def doEvolve(data,encoding,allowDuplicates,distanceFeaturePercentage):
 	target_file.write(result)
 	target_file.close()
 	split = result.splitlines()
+	print result
 	bestFitness = split[len(split)-3].split()[2]
 
 	avgIndividualLengths = []
@@ -143,9 +144,10 @@ def run(data, encoding, allowDuplicates):
 	feature_occurrency_file.close();
 	return cut_path,avg_fitness_path,avg_length_path,best_length_path,feature_occurrency_path
 
-data = ["ionosphere_mapped","semeion_mapped"]
+# add robots data
+data = ["ionosphere_mapped","semeion_mapped","sensor_readings_mapped","a"]
 
-i = 0
+i = 2
 #evolution with integer encoding
 cut1, avg_fitness1, avg_length1, best_length1, feature_occurrency1 = run(data[i], "integer", "true")
 cut2, avg_fitness2, avg_length2, best_length2, feature_occurrency2 = run(data[i], "integer", "false")

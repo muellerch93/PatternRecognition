@@ -1,6 +1,8 @@
 
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Random;
 
 import evSOLve.JEvolution.JEvolution;
 import evSOLve.JEvolution.chromosomes.Chromosome;
@@ -10,7 +12,7 @@ import evSOLve.JEvolution.chromosomes.PermChromosome;
 
 public class Main {
 
-
+    public static Random rand;
     public static int populationSize;
     public static void main(String[] args) throws Exception {
 
@@ -47,16 +49,36 @@ public class Main {
         boolean isEuclideanDistance;
 
 
-
         if(args.length == 4){
             String inputFilePath= args[0];
-            patterns = MyFileIO.readPatternsFromFile(inputFilePath);
+
+            ArrayList<Pattern> readPatterns = MyFileIO.readPatternsFromFile(inputFilePath);
+            if(inputFilePath.equals("data/sensor_readings_mapped.data")){
+                patterns = new ArrayList<Pattern>();
+                rand = new Random();
+                for (int i =0;i<readPatterns.size();i++) {
+                    if (rand.nextInt(10) < 3) {
+                        patterns.add(readPatterns.get(i));
+                    }
+                }
+               //patterns = readPatterns;
+            }else{
+                patterns = readPatterns;
+            }
             encoding = args[1];
             distanceFeaturePercentage = Double.parseDouble(args[2]);
             isEuclideanDistance = Boolean.parseBoolean(args[3]);
 
         }else{
-            patterns = MyFileIO.readPatternsFromFile("data/ionosphere_mapped.data");
+            ArrayList<Pattern> readPatterns = MyFileIO.readPatternsFromFile("data/sensor_readings_mapped.data");
+            rand = new Random();
+            //only include 10% of the patterns;
+            patterns = new ArrayList<Pattern>();
+            for (int i =0;i<readPatterns.size();i++){
+                if(rand.nextInt(10) < 3)
+                    patterns.add(readPatterns.get(i));
+
+            }
             encoding = "integer";
             distanceFeaturePercentage = 0.3;
             isEuclideanDistance = true;
@@ -105,6 +127,7 @@ public class Main {
 
         // EAReporter.setReportLevel(JEvolutionReporter.BRIEF);
 // 			EAReporter.useFitnessRepository(true);
+
         populationSize = EA.getPopulationSize();
 
         System.out.println("Starting evolution...");
