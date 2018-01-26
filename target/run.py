@@ -279,8 +279,8 @@ def full(dataset_index):
 
 datasets = ["ionosphere_mapped","semeion_mapped","sensor_readings_mapped"]
 dataset_feature_counts = [ 34, 256, 24]
-#run_fast(0)
-full(0)
+#run_fast(1)
+full(2)
 #for i in range(2,len(datasets)):
 	#full(datasets[i])
 	#run_fast(datasets[i])
