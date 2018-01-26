@@ -1,0 +1,409 @@
+Starting evolution...
+length: 15.12
+feature_occurency: [30, 46, 66, 52, 54, 45, 41, 51, 55, 54, 43, 56, 59, 51, 51, 49, 57, 51, 54, 52, 51, 45, 60, 27]
+
+Generation 0
+Average: 0.7909 Best: 0.8299
+Best Individual: 
+C0 12|6|18|9|20|8|20|16|0|7|22|3|10|9|16|14|5|22|18|9|17|14|3|18|
+Overall Best: 0.8299 Generation: 0
+length: 14.72
+feature_occurency: [27, 40, 59, 62, 40, 40, 37, 48, 54, 53, 40, 49, 62, 55, 75, 44, 57, 59, 50, 44, 66, 47, 71, 21]
+
+Generation 1
+Average: 0.8032 Best: 0.8335
+Best Individual: 
+C0 18|8|16|20|7|9|8|21|22|5|17|18|19|22|10|6|18|12|14|22|20|6|21|8|
+Overall Best: 0.8335 Generation: 1
+length: 14.98
+feature_occurency: [21, 30, 48, 62, 39, 44, 34, 48, 54, 61, 44, 49, 46, 61, 91, 39, 64, 56, 45, 41, 68, 54, 83, 18]
+
+Generation 2
+Average: 0.8116 Best: 0.8479
+Best Individual: 
+C0 18|17|10|13|6|16|23|15|14|12|13|17|14|19|20|19|13|18|18|4|10|2|22|17|
+Overall Best: 0.8479 Generation: 2
+length: 14.46
+feature_occurency: [24, 31, 45, 70, 42, 34, 32, 49, 50, 56, 43, 59, 57, 66, 102, 31, 52, 40, 43, 46, 73, 50, 90, 15]
+
+Generation 3
+Average: 0.8152 Best: 0.8470
+Best Individual: 
+C0 11|14|14|2|11|8|14|3|0|7|22|5|10|19|16|14|5|22|14|0|17|14|3|17|
+Overall Best: 0.8479 Generation: 2
+length: 14.78
+feature_occurency: [24, 30, 49, 56, 37, 27, 31, 55, 55, 54, 46, 42, 57, 70, 103, 33, 50, 48, 40, 52, 81, 49, 87, 24]
+
+Generation 4
+Average: 0.8205 Best: 0.8470
+Best Individual: 
+C0 12|0|19|9|20|8|7|3|0|12|16|17|12|12|21|14|5|22|14|0|17|23|3|18|
+Overall Best: 0.8479 Generation: 2
+length: 14.7
+feature_occurency: [33, 28, 48, 52, 34, 33, 31, 65, 56, 45, 38, 42, 68, 61, 120, 32, 46, 50, 41, 45, 82, 44, 78, 28]
+
+Generation 5
+Average: 0.8220 Best: 0.8524
+Best Individual: 
+C0 11|14|14|2|11|6|14|3|8|20|20|17|14|19|19|19|11|22|14|0|17|14|3|17|
+Overall Best: 0.8524 Generation: 5
+length: 14.7
+feature_occurency: [38, 25, 42, 55, 33, 35, 31, 58, 53, 41, 41, 42, 80, 54, 125, 21, 38, 50, 42, 58, 84, 42, 78, 34]
+
+Generation 6
+Average: 0.8244 Best: 0.8479
+Best Individual: 
+C0 7|17|22|6|12|19|20|21|13|22|10|21|14|22|13|14|11|13|20|13|20|20|8|23|
+Overall Best: 0.8524 Generation: 5
+length: 14.78
+feature_occurency: [38, 21, 35, 48, 29, 30, 34, 54, 48, 44, 41, 63, 73, 57, 134, 27, 34, 41, 43, 69, 88, 37, 81, 31]
+
+Generation 7
+Average: 0.8263 Best: 0.8533
+Best Individual: 
+C0 18|10|15|20|7|9|8|23|7|20|20|18|18|18|19|19|13|10|14|20|17|13|3|15|
+Overall Best: 0.8533 Generation: 7
+length: 14.3
+feature_occurency: [29, 14, 26, 49, 24, 23, 35, 57, 44, 54, 55, 63, 72, 61, 132, 26, 39, 32, 51, 78, 93, 38, 78, 27]
+
+Generation 8
+Average: 0.8291 Best: 0.8524
+Best Individual: 
+C0 16|5|14|14|21|17|10|19|13|22|13|13|14|22|22|3|6|8|12|18|5|20|20|8|
+Overall Best: 0.8533 Generation: 7
+length: 14.1
+feature_occurency: [27, 16, 24, 48, 20, 27, 36, 57, 43, 63, 52, 56, 69, 62, 137, 14, 44, 31, 51, 77, 110, 32, 69, 35]
+
+Generation 9
+Average: 0.8310 Best: 0.8668
+Best Individual: 
+C0 9|14|11|2|11|3|14|3|20|19|23|12|11|19|20|22|11|16|20|11|14|2|20|14|
+Overall Best: 0.8668 Generation: 9
+length: 14.16
+feature_occurency: [38, 18, 35, 38, 15, 31, 32, 58, 46, 62, 46, 43, 71, 67, 140, 12, 42, 27, 56, 79, 109, 40, 66, 29]
+
+Generation 10
+Average: 0.8310 Best: 0.8560
+Best Individual: 
+C0 20|15|14|11|21|17|20|21|13|22|22|21|14|19|13|12|11|13|20|13|20|15|10|14|
+Overall Best: 0.8668 Generation: 9
+length: 13.92
+feature_occurency: [44, 16, 37, 38, 17, 30, 31, 51, 45, 59, 45, 49, 49, 92, 145, 19, 42, 28, 57, 75, 109, 36, 61, 25]
+
+Generation 11
+Average: 0.8309 Best: 0.8641
+Best Individual: 
+C0 3|14|14|18|13|2|14|7|0|19|19|18|18|19|13|20|13|22|6|13|20|20|2|6|
+Overall Best: 0.8668 Generation: 9
+length: 13.66
+feature_occurency: [47, 18, 41, 32, 15, 29, 34, 54, 44, 62, 40, 39, 54, 107, 146, 19, 33, 24, 61, 83, 98, 35, 58, 27]
+
+Generation 12
+Average: 0.8321 Best: 0.8641
+Best Individual: 
+C0 16|5|14|21|21|23|10|16|13|21|13|13|14|16|14|20|13|19|14|21|5|20|20|8|
+Overall Best: 0.8668 Generation: 9
+length: 13.7
+feature_occurency: [44, 24, 45, 25, 16, 33, 34, 45, 54, 53, 48, 36, 59, 101, 148, 16, 39, 27, 54, 86, 99, 41, 52, 21]
+
+Generation 13
+Average: 0.8334 Best: 0.8596
+Best Individual: 
+C0 20|9|14|21|14|9|22|9|14|20|22|22|5|13|9|14|21|22|14|12|20|20|10|14|
+Overall Best: 0.8668 Generation: 9
+length: 13.86
+feature_occurency: [34, 16, 33, 30, 13, 42, 27, 57, 46, 57, 50, 36, 57, 83, 164, 20, 48, 30, 50, 81, 103, 48, 59, 16]
+
+Generation 14
+Average: 0.8346 Best: 0.8695
+Best Individual: 
+C0 23|19|7|13|14|13|8|12|7|20|14|12|11|19|20|14|11|7|23|13|20|3|12|9|
+Overall Best: 0.8695 Generation: 14
+length: 13.8
+feature_occurency: [26, 11, 26, 34, 6, 35, 17, 52, 50, 61, 57, 44, 54, 82, 167, 23, 56, 41, 47, 81, 103, 45, 64, 18]
+
+Generation 15
+Average: 0.8393 Best: 0.8632
+Best Individual: 
+C0 7|10|10|20|17|17|19|7|13|22|17|13|20|18|16|13|10|14|19|18|19|1|10|14|
+Overall Best: 0.8695 Generation: 14
+length: 14.14
+feature_occurency: [19, 15, 27, 38, 7, 37, 25, 57, 51, 52, 58, 49, 52, 77, 163, 26, 50, 39, 44, 93, 91, 43, 65, 22]
+
+Generation 16
+Average: 0.8373 Best: 0.8650
+Best Individual: 
+C0 23|19|7|13|14|13|2|22|14|19|12|19|14|19|19|14|9|15|20|18|14|14|11|8|
+Overall Best: 0.8695 Generation: 14
+length: 14.38
+feature_occurency: [19, 17, 23, 42, 12, 31, 25, 58, 51, 64, 64, 46, 50, 81, 159, 24, 47, 41, 47, 87, 89, 36, 63, 24]
+
+Generation 17
+Average: 0.8324 Best: 0.8758
+Best Individual: 
+C0 14|10|19|14|14|14|22|22|14|20|22|22|9|16|16|7|10|14|19|18|19|1|11|8|
+Overall Best: 0.8758 Generation: 17
+length: 14.1
+feature_occurency: [29, 15, 17, 45, 10, 27, 26, 55, 66, 65, 46, 45, 47, 78, 172, 27, 48, 41, 47, 85, 87, 41, 60, 21]
+
+Generation 18
+Average: 0.8363 Best: 0.8641
+Best Individual: 
+C0 14|10|19|20|14|14|8|20|16|17|19|22|9|16|16|7|10|14|19|7|5|20|11|8|
+Overall Best: 0.8758 Generation: 17
+length: 14.28
+feature_occurency: [26, 13, 24, 50, 12, 29, 26, 51, 77, 60, 42, 49, 42, 70, 161, 21, 57, 43, 52, 93, 86, 34, 63, 19]
+
+Generation 19
+Average: 0.8361 Best: 0.8686
+Best Individual: 
+C0 22|10|10|13|17|17|19|7|13|22|17|13|23|18|16|14|16|12|19|18|19|1|10|14|
+Overall Best: 0.8758 Generation: 17
+length: 14.1
+feature_occurency: [23, 16, 22, 41, 8, 24, 26, 50, 76, 59, 47, 55, 44, 65, 160, 27, 60, 51, 59, 111, 77, 29, 51, 19]
+
+Generation 20
+Average: 0.8385 Best: 0.8848
+Best Individual: 
+C0 7|10|10|13|17|17|19|7|10|14|20|13|20|18|19|14|7|12|19|18|19|20|10|14|
+Overall Best: 0.8848 Generation: 20
+length: 14.06
+feature_occurency: [28, 17, 27, 35, 10, 22, 28, 46, 77, 46, 57, 55, 37, 61, 165, 16, 61, 60, 66, 115, 86, 21, 46, 18]
+
+Generation 21
+Average: 0.8383 Best: 0.8812
+Best Individual: 
+C0 3|14|14|18|13|12|19|19|14|17|14|18|1|14|20|18|12|19|20|11|20|20|18|0|
+Overall Best: 0.8848 Generation: 20
+length: 14.08
+feature_occurency: [26, 20, 20, 40, 13, 27, 27, 46, 79, 44, 64, 55, 36, 51, 156, 17, 61, 61, 70, 130, 86, 21, 38, 12]
+
+Generation 22
+Average: 0.8406 Best: 0.8722
+Best Individual: 
+C0 14|10|19|20|14|14|8|19|20|19|10|16|18|19|19|16|8|19|14|11|3|19|7|8|
+Overall Best: 0.8848 Generation: 20
+length: 13.84
+feature_occurency: [26, 25, 19, 37, 12, 33, 25, 41, 78, 53, 48, 67, 32, 39, 170, 24, 63, 59, 73, 131, 91, 15, 29, 10]
+
+Generation 23
+Average: 0.8420 Best: 0.8785
+Best Individual: 
+C0 3|14|14|18|13|14|8|19|20|19|16|16|18|19|19|18|8|19|20|20|20|20|8|0|
+Overall Best: 0.8848 Generation: 20
+length: 13.28
+feature_occurency: [20, 28, 14, 38, 14, 26, 27, 48, 76, 50, 43, 67, 34, 41, 175, 30, 60, 55, 73, 121, 110, 11, 27, 12]
+
+Generation 24
+Average: 0.8421 Best: 0.8749
+Best Individual: 
+C0 3|14|17|18|13|14|8|19|20|19|16|16|18|19|19|18|8|19|20|20|17|17|8|0|
+Overall Best: 0.8848 Generation: 20
+length: 13.5
+feature_occurency: [23, 27, 15, 35, 17, 29, 26, 46, 72, 49, 37, 61, 39, 44, 177, 29, 70, 48, 73, 128, 97, 13, 30, 15]
+
+Generation 25
+Average: 0.8388 Best: 0.8794
+Best Individual: 
+C0 20|14|17|18|13|14|8|19|20|19|16|16|18|19|19|18|8|19|20|18|8|18|1|8|
+Overall Best: 0.8848 Generation: 20
+length: 13.48
+feature_occurency: [16, 41, 8, 37, 17, 31, 28, 37, 74, 49, 29, 52, 41, 46, 191, 24, 60, 51, 93, 106, 102, 14, 31, 22]
+
+Generation 26
+Average: 0.8401 Best: 0.8794
+Best Individual: 
+C0 16|16|15|11|12|14|14|19|19|14|17|14|23|13|23|14|16|12|19|11|8|17|20|8|
+Overall Best: 0.8848 Generation: 20
+length: 13.5
+feature_occurency: [14, 42, 10, 37, 16, 31, 26, 28, 70, 45, 34, 48, 46, 50, 186, 28, 69, 57, 85, 112, 105, 15, 28, 18]
+
+Generation 27
+Average: 0.8411 Best: 0.8803
+Best Individual: 
+C0 16|16|15|11|0|14|14|19|19|14|17|14|23|13|23|14|16|12|19|11|8|17|20|8|
+Overall Best: 0.8848 Generation: 20
+length: 13.34
+feature_occurency: [16, 42, 19, 40, 18, 27, 27, 19, 79, 48, 27, 53, 37, 49, 169, 29, 68, 64, 79, 123, 101, 17, 28, 21]
+
+Generation 28
+Average: 0.8403 Best: 0.8803
+Best Individual: 
+C0 7|12|10|10|14|14|19|19|20|19|12|16|12|12|19|18|12|19|20|20|17|1|10|20|
+Overall Best: 0.8848 Generation: 20
+length: 13.52
+feature_occurency: [18, 37, 18, 35, 21, 22, 27, 21, 77, 44, 34, 50, 44, 46, 171, 34, 57, 61, 78, 123, 117, 14, 26, 25]
+
+Generation 29
+Average: 0.8404 Best: 0.8866
+Best Individual: 
+C0 14|14|20|14|9|8|14|19|20|19|12|16|12|12|19|18|12|19|20|20|12|19|14|8|
+Overall Best: 0.8866 Generation: 29
+length: 13.38
+feature_occurency: [19, 35, 20, 26, 28, 24, 23, 29, 70, 42, 39, 45, 52, 47, 170, 36, 60, 45, 70, 137, 112, 20, 27, 24]
+
+Generation 30
+Average: 0.8404 Best: 0.8866
+Best Individual: 
+C0 14|12|10|10|14|8|14|19|20|19|12|16|12|12|19|18|6|19|20|20|12|19|14|8|
+Overall Best: 0.8866 Generation: 29
+length: 13.2
+feature_occurency: [20, 34, 16, 18, 28, 37, 20, 28, 77, 40, 33, 44, 61, 41, 189, 39, 60, 39, 75, 134, 104, 11, 25, 27]
+
+Generation 31
+Average: 0.8430 Best: 0.8803
+Best Individual: 
+C0 14|14|20|14|9|8|14|19|20|19|12|16|12|6|19|18|12|19|18|20|12|8|16|8|
+Overall Best: 0.8866 Generation: 29
+length: 13.02
+feature_occurency: [26, 32, 11, 21, 21, 40, 22, 23, 84, 30, 37, 36, 70, 44, 191, 40, 65, 41, 75, 117, 97, 9, 25, 43]
+
+Generation 32
+Average: 0.8428 Best: 0.8722
+Best Individual: 
+C0 14|14|20|20|0|14|8|19|14|14|12|16|8|6|19|23|12|19|18|20|12|8|16|8|
+Overall Best: 0.8866 Generation: 29
+length: 13.16
+feature_occurency: [23, 34, 13, 29, 22, 33, 19, 27, 86, 28, 35, 37, 76, 48, 200, 36, 57, 34, 73, 130, 80, 9, 21, 50]
+
+Generation 33
+Average: 0.8451 Best: 0.8731
+Best Individual: 
+C0 14|14|20|20|0|14|8|19|14|14|12|16|8|6|19|23|12|19|18|20|18|8|16|8|
+Overall Best: 0.8866 Generation: 29
+length: 13.06
+feature_occurency: [17, 33, 11, 26, 20, 32, 12, 32, 94, 32, 39, 34, 84, 42, 196, 34, 53, 38, 80, 127, 82, 13, 20, 49]
+
+Generation 34
+Average: 0.8453 Best: 0.8659
+Best Individual: 
+C0 14|12|10|10|4|19|0|19|15|14|18|17|12|12|19|11|9|19|20|20|12|17|18|13|
+Overall Best: 0.8866 Generation: 29
+length: 13.06
+feature_occurency: [16, 31, 9, 16, 14, 37, 18, 33, 97, 32, 43, 38, 96, 38, 189, 36, 56, 44, 90, 108, 73, 17, 25, 44]
+
+Generation 35
+Average: 0.8424 Best: 0.8650
+Best Individual: 
+C0 14|14|20|20|0|14|8|19|22|14|17|18|18|14|19|12|12|3|8|20|18|8|16|8|
+Overall Best: 0.8866 Generation: 29
+length: 13.26
+feature_occurency: [16, 29, 8, 24, 16, 29, 12, 34, 89, 40, 46, 38, 103, 35, 181, 31, 65, 44, 86, 112, 76, 20, 25, 41]
+
+Generation 36
+Average: 0.8453 Best: 0.8695
+Best Individual: 
+C0 16|12|20|20|0|14|8|19|22|22|18|16|8|18|16|18|10|16|16|12|14|19|14|8|
+Overall Best: 0.8866 Generation: 29
+length: 13.22
+feature_occurency: [19, 30, 10, 24, 17, 29, 14, 28, 88, 45, 60, 36, 95, 33, 172, 31, 64, 48, 99, 92, 88, 22, 25, 31]
+
+Generation 37
+Average: 0.8428 Best: 0.8695
+Best Individual: 
+C0 16|12|20|20|0|14|8|19|22|22|18|16|8|18|16|18|10|16|16|12|14|19|14|8|
+Overall Best: 0.8866 Generation: 29
+length: 13.4
+feature_occurency: [24, 26, 11, 29, 14, 33, 14, 26, 86, 38, 48, 41, 85, 42, 178, 32, 60, 47, 93, 93, 85, 29, 27, 39]
+
+Generation 38
+Average: 0.8423 Best: 0.8704
+Best Individual: 
+C0 14|12|10|10|8|12|18|12|14|14|19|9|14|14|20|11|19|1|9|20|18|8|14|8|
+Overall Best: 0.8866 Generation: 29
+length: 13.56
+feature_occurency: [32, 27, 18, 24, 8, 18, 10, 27, 80, 38, 46, 43, 72, 41, 191, 37, 66, 41, 94, 101, 76, 32, 30, 48]
+
+Generation 39
+Average: 0.8410 Best: 0.8794
+Best Individual: 
+C0 16|11|20|14|15|10|8|20|15|19|17|18|18|14|19|23|18|16|16|12|12|19|14|8|
+Overall Best: 0.8866 Generation: 29
+length: 13.6
+feature_occurency: [21, 25, 17, 27, 11, 16, 9, 29, 66, 49, 48, 45, 58, 48, 190, 42, 55, 48, 93, 108, 79, 28, 32, 56]
+
+Generation 40
+Average: 0.8428 Best: 0.8677
+Best Individual: 
+C0 9|14|20|10|18|14|14|19|10|19|17|18|18|14|15|23|22|3|8|20|23|20|16|8|
+Overall Best: 0.8866 Generation: 29
+length: 13.54
+feature_occurency: [22, 28, 15, 34, 11, 21, 15, 31, 62, 54, 48, 34, 54, 53, 184, 37, 59, 46, 75, 107, 80, 33, 43, 54]
+
+Generation 41
+Average: 0.8427 Best: 0.8740
+Best Individual: 
+C0 16|11|10|14|15|10|8|20|15|19|17|18|18|14|19|23|14|16|16|12|12|20|14|8|
+Overall Best: 0.8866 Generation: 29
+length: 13.9
+feature_occurency: [29, 20, 18, 33, 14, 26, 14, 26, 78, 56, 43, 35, 63, 51, 174, 28, 52, 48, 84, 112, 69, 28, 45, 54]
+
+Generation 42
+Average: 0.8410 Best: 0.8704
+Best Individual: 
+C0 14|14|20|10|18|22|14|19|10|19|17|18|18|16|20|23|22|3|8|20|23|20|16|8|
+Overall Best: 0.8866 Generation: 29
+length: 13.88
+feature_occurency: [26, 33, 19, 29, 16, 24, 16, 30, 71, 48, 58, 39, 56, 39, 163, 34, 52, 57, 80, 114, 78, 28, 33, 57]
+
+Generation 43
+Average: 0.8407 Best: 0.8704
+Best Individual: 
+C0 14|14|4|10|18|22|14|19|10|19|17|18|14|16|20|23|22|11|8|20|23|20|16|8|
+Overall Best: 0.8866 Generation: 29
+length: 14.34
+feature_occurency: [31, 33, 19, 24, 26, 24, 14, 28, 56, 47, 69, 44, 52, 37, 167, 39, 59, 51, 74, 110, 77, 34, 32, 53]
+
+Generation 44
+Average: 0.8386 Best: 0.8677
+Best Individual: 
+C0 14|14|20|14|10|13|22|8|20|19|10|18|13|14|19|23|14|16|16|12|12|17|16|8|
+Overall Best: 0.8866 Generation: 29
+length: 14.24
+feature_occurency: [32, 37, 23, 19, 21, 26, 13, 27, 49, 45, 65, 41, 55, 44, 168, 38, 63, 65, 68, 109, 78, 33, 29, 52]
+
+Generation 45
+Average: 0.8403 Best: 0.8641
+Best Individual: 
+C0 14|14|15|10|14|15|14|10|23|19|6|14|20|16|2|19|14|16|16|12|20|18|16|19|
+Overall Best: 0.8866 Generation: 29
+length: 14.08
+feature_occurency: [24, 32, 26, 21, 16, 26, 12, 22, 52, 42, 61, 30, 55, 43, 182, 37, 78, 61, 71, 117, 88, 27, 28, 49]
+
+Generation 46
+Average: 0.8424 Best: 0.8767
+Best Individual: 
+C0 23|14|15|10|14|15|14|10|19|22|17|18|1|17|19|23|14|22|16|12|20|18|16|19|
+Overall Best: 0.8866 Generation: 29
+length: 13.76
+feature_occurency: [25, 40, 21, 22, 20, 22, 15, 23, 51, 32, 66, 32, 66, 32, 186, 29, 77, 75, 64, 103, 91, 28, 26, 54]
+
+Generation 47
+Average: 0.8426 Best: 0.8740
+Best Individual: 
+C0 14|14|20|10|18|20|8|18|4|19|17|12|13|14|19|23|14|10|16|12|17|17|14|20|
+Overall Best: 0.8866 Generation: 29
+length: 13.86
+feature_occurency: [27, 32, 17, 22, 23, 18, 14, 22, 45, 35, 60, 39, 55, 37, 181, 33, 79, 89, 63, 109, 92, 34, 28, 46]
+
+Generation 48
+Average: 0.8422 Best: 0.8758
+Best Individual: 
+C0 14|19|20|10|22|20|14|1|20|19|10|18|19|14|19|23|14|10|16|4|8|19|20|16|
+Overall Best: 0.8866 Generation: 29
+length: 13.56
+feature_occurency: [29, 32, 12, 26, 23, 16, 16, 27, 42, 35, 57, 48, 39, 36, 171, 31, 82, 96, 66, 121, 95, 36, 26, 38]
+
+Generation 49
+Average: 0.8443 Best: 0.8776
+Best Individual: 
+C0 14|11|11|10|18|20|19|17|11|7|17|18|13|14|19|23|20|10|16|16|6|17|14|19|
+Overall Best: 0.8866 Generation: 29
+==================
+    Best individual after 50 generations
+    computed in 1,341.9690 seconds
+    985 elements out of 1111 correct.
+    emerged in generation 29
+    with fitness 0.8866
+==================
+

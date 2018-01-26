@@ -2,9 +2,12 @@
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Iterator;
 import java.util.Random;
 
+import evSOLve.JEvolution.Individual;
 import evSOLve.JEvolution.JEvolution;
+import evSOLve.JEvolution.JEvolutionReporter;
 import evSOLve.JEvolution.chromosomes.Chromosome;
 import evSOLve.JEvolution.chromosomes.IntChromosome;
 import evSOLve.JEvolution.chromosomes.PermChromosome;
@@ -41,7 +44,7 @@ public class Main {
 
         //+ call it an EA
 // 		EA.setMaximization(false);																											//o minimization problem
-        // JEvolutionReporter EAReporter = (JEvolutionReporter)EA.getReporter();			                            //- get the reporter
+      		                            //- get the reporter
         //+ create a chromosome
         ArrayList<Pattern> patterns;
         String encoding;
@@ -57,7 +60,8 @@ public class Main {
                 patterns = new ArrayList<Pattern>();
                 rand = new Random();
                 for (int i =0;i<readPatterns.size();i++) {
-                    if (rand.nextInt(10) < 3) {
+
+                    if (rand.nextInt(10) < 2) {
                         patterns.add(readPatterns.get(i));
                     }
                 }
@@ -75,7 +79,7 @@ public class Main {
             //only include 10% of the patterns;
             patterns = new ArrayList<Pattern>();
             for (int i =0;i<readPatterns.size();i++){
-                if(rand.nextInt(10) < 3)
+                if(rand.nextBoolean())
                     patterns.add(readPatterns.get(i));
 
             }
@@ -89,7 +93,7 @@ public class Main {
         doEvolution(patterns,encoding,distanceFeaturePercentage,isEuclideanDistance);
         //doEvolution(patterns, true,0.3, true);
 
-        // Individual best = EAReporter.getBestIndividual();
+
         // best.toFile("bestResult.xml");
         //Individual bestFromFile = new Individual("bestResult.xml");
 
@@ -123,7 +127,7 @@ public class Main {
 //			EA.setSelection(new TournamentSelection(3));
 		//EA.setPopulationSize(5, 10);
         EA.setFitnessThreshold(1.0);                                                                //o better fitness not possible
-        EA.setMaximalGenerations(50);                                                        //o
+        EA.setMaximalGenerations(100);                                                       //o
 
         // EAReporter.setReportLevel(JEvolutionReporter.BRIEF);
 // 			EAReporter.useFitnessRepository(true);
@@ -133,7 +137,10 @@ public class Main {
         System.out.println("Starting evolution...");
 
         EA.doEvolve();
-
+        JEvolutionReporter EAReporter = (JEvolutionReporter)EA.getReporter();
+        Individual best = EAReporter.getBestIndividual();
+        String bestIndividualStr = Arrays.toString(best.getGenotype().toArray());
+        System.out.println(bestIndividualStr.substring(1,bestIndividualStr.length()-1));
     }
 
 }
