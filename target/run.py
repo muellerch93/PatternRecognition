@@ -282,5 +282,5 @@ dataset_feature_counts = [ 34, 256, 24]
 #run_fast(1)
 #full(2)
 for i in range(0,len(datasets)):
-	full(i)
+	run_fast(i)
 	#run_fast(datasets[i])
